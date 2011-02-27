@@ -1,3 +1,7 @@
+" init patogen system
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 set nocompatible
 set number
 set smartindent
@@ -7,7 +11,7 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set noerrorbells
-set foldmethod=syntax
+"set foldmethod=syntax
 set ignorecase
 set visualbell t_vb=
 set cursorline
