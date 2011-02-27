@@ -1,10 +1,7 @@
 Installation:
-  git clone git://github.com/mmacia/dotvim.git ~/.vim
+  git clone git://github.com/mmacia/dotfiles.git ~/.dotfiles
 
-Create symlinks:
-  ln -s ~/.vim/vimrc ~/.vimrc
+Create symlinks and update submodules:
+  cd ~/.dotfiles
+  make
 
-Populate submodules:
-  cd ~/.vim
-  git submodule init
-  git submodule update
