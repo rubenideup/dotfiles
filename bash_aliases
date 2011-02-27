@@ -1,0 +1,5 @@
+alias ll='ls -l'
+alias la='ls -la'
+alias rm='trash'
+alias cd..='cd ..'
+alias wspotify='wine ~/.wine/drive_c/Archivos\ de\ programa/Spotify/spotify.exe'
