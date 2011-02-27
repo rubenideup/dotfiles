@@ -1,8 +1,8 @@
 all:
 	ln -s ~/.dotfiles/vimrc ~/.vimrc
 	ln -s ~/.dotfiles/vim ~/.vim
-	ln -s ~/.dofiles/bash_aliases ~/.bash_aliases
-	ln -s ~/.dofiles/bashrc ~/.bashrc
+	ln -s ~/.dotfiles/bash_aliases ~/.bash_aliases
+	ln -s ~/.dotfiles/bashrc ~/.bashrc
 
 
 init-submodules:
