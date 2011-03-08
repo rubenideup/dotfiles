@@ -54,6 +54,9 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_File_Fold_Auto_Close = 1
 
+" hack to solve bug in SQL files in ubuntu
+let g:omni_sql_no_default_maps = 1
+
 " custom mappings
 map <F1> :NERDTreeToggle<CR>
 map <F2> :TlistToggle<CR>
