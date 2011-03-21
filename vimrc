@@ -38,6 +38,7 @@ match OverLength /\%121v.\+/
 
 " remove trailing spaces on save
 autocmd BufWritePre *.php :%s/\s\+$//e
+autocmd BufWritePre *.sql :%s/\s\+$//e
 
 " SuperTab completion mode
 let g:SuperTabDefaultCompletionType = "context"
