@@ -11,7 +11,6 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set noerrorbells
-"set foldmethod=syntax
 set ignorecase
 set visualbell t_vb=
 set cursorline
@@ -21,6 +20,15 @@ syntax on
 set t_Co=256
 set background=dark
 colorscheme wombat256
+
+" folding options
+set foldmethod=syntax
+set foldlevel=1
+set foldcolumn=4
+let php_folding=1
+let javaScript_fold=1
+let xml_syntax_folding=1
+
 
 " set gui font
 if has('gui_running')
