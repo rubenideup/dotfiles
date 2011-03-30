@@ -24,7 +24,7 @@ colorscheme wombat256
 " folding options
 set foldmethod=syntax
 set foldlevel=1
-set foldcolumn=4
+set foldcolumn=3
 let php_folding=1
 let javaScript_fold=1
 let xml_syntax_folding=1
