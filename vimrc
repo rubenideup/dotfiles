@@ -29,6 +29,11 @@ let php_folding=1
 let javaScript_fold=1
 let xml_syntax_folding=1
 
+" view special characters
+autocmd filetype xhtml,html,xml,php,yaml set list
+
+autocmd filetype xhtml,html,xml set listchars=tab:▸\ 
+autocmd filetype php,yaml set listchars=tab:▸\ ,eol:¬
 
 " set gui font
 if has('gui_running')
