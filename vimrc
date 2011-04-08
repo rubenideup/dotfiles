@@ -81,3 +81,5 @@ map <F2> :TlistToggle<CR>
 let g:qb_hotkey = "<F3>"
 map <F10> :Bclose<CR>
 map <F11> :shell<CR>
+map <C-Left> <ESC>:bprev!<CR>
+map <C-Right> <ESC>:bnext!<CR>
