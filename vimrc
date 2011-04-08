@@ -14,7 +14,6 @@ set noerrorbells
 set ignorecase
 set visualbell t_vb=
 set cursorline
-syntax on
 
 
 set t_Co=256
@@ -41,9 +40,13 @@ if has('gui_running')
 endif
 
 set mouse=a
-filetype indent on
+syntax on
 filetype on
+filetype indent on
 filetype plugin on
+
+" apply special syntax colors
+autocmd BufRead *.twig set filetype=twig
 
 " mark the lines above 120 columns
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
