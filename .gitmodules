@@ -16,3 +16,6 @@
 [submodule "vim/bundle/php_syntax"]
 	path = vim/bundle/php_syntax
 	url = https://github.com/vim-scripts/php.vim--Nicholson.git
+[submodule "vim/bundle/check_syntax"]
+	path = vim/bundle/check_syntax
+	url = https://github.com/tomtom/checksyntax_vim.git
