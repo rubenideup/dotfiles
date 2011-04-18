@@ -53,9 +53,7 @@ highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%121v.\+/
 
 " remove trailing spaces on save
-autocmd BufWritePre *.php :%s/\s\+$//e
-autocmd BufWritePre *.sql :%s/\s\+$//e
-autocmd BufWritePre *.xml :%s/\s\+$//e
+autocmd BufWritePre *.php,*.sql,*.xml,*.twig,*.c,*.cpp,*.h,*.hpp :%s/\s\+$//e
 
 " SuperTab completion mode
 let g:SuperTabDefaultCompletionType = "context"
