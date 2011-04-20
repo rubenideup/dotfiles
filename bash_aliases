@@ -20,5 +20,4 @@ alias ubz="tar xvjf"
 alias rscp="rsync --partial --progress --rsh=ssh"
 
 # storage SSH private keys in memory
-alias konsole="/usr/bin/ssh-agent /usr/bin/konsole"
 alias ssh-remember="find ~/.ssh -name "id_?sa" -exec ssh-add {} \;"
