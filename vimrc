@@ -76,8 +76,10 @@ let g:omni_sql_no_default_maps = 1
 " custom mappings
 map <F1> :NERDTreeToggle<CR>
 map <F2> :TlistToggle<CR>
-let g:qb_hotkey = "<F3>"
 map <F10> :Bclose<CR>
 map <F11> :shell<CR>
 map <C-Left> <ESC>:bprev!<CR>
 map <C-Right> <ESC>:bnext!<CR>
+
+nmap <silent> ,t :CommandT<CR>
+nmap <silent> ,b :CommandTBuffer<CR>
