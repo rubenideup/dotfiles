@@ -3,6 +3,7 @@ all:
 	ln -s ~/.dotfiles/vim ~/.vim
 	ln -s ~/.dotfiles/bash_aliases ~/.bash_aliases
 	ln -s ~/.dotfiles/bashrc ~/.bashrc
+	mkdir ~/.vim/swp
 
 
 init-submodules:

@@ -34,6 +34,9 @@ autocmd filetype xhtml,html,xml,php,yaml set list
 autocmd filetype xhtml,html,xml set listchars=tab:▸\ 
 autocmd filetype php,yaml set listchars=tab:▸\ ,eol:¬
 
+" directories for .swp files
+set directory=~/.vim/swp//,/tmp//
+
 " set gui font
 if has('gui_running')
   set guifont=Monaco\ 10
