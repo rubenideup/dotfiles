@@ -23,7 +23,18 @@ install() {
   mksymlink ~/.bashrc
   mksymlink ~/.bash_aliases
 
-  mkdir ~/.vim/swp
+  if [ ! -d ~/.vim/swp ]; then
+    mkdir ~/.vim/swp
+  fi
+}
+
+install_helper_scripts() {
+  echo "Installing helper scripts ..."
+
+  # install ksshaskpass to remember SSH keys in KDE desktop
+  if [ -d ~/.kde -a ! -L ~/.kde/Autostart/ssh-add.sh ]; then
+    ln -s ~/.dotfiles/scripts/ssh-add.sh ~/.kde/Autostart/ssh-add.sh
+  fi
 }
 
 update_submodules() {
@@ -35,5 +46,6 @@ update_submodules() {
 
 install
 update_submodules
+#install_helper_scripts
 
 echo "Done."
