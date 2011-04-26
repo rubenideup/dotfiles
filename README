@@ -3,5 +3,5 @@ Installation:
 
 Create symlinks and update submodules:
   cd ~/.dotfiles
-  make
+  ./setup.sh
 
