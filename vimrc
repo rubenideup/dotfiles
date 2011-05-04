@@ -61,24 +61,12 @@ autocmd BufWritePre *.php,*.sql,*.xml,*.twig,*.c,*.cpp,*.h,*.hpp :%s/\s\+$//e
 " SuperTab completion mode
 let g:SuperTabDefaultCompletionType = "context"
 
-" Taglist variables
-" Display function name in status bar:
-let g:ctags_statusline=1
-" Automatically start script
-let generate_tags=1
-" Various Taglist diplay config:
-let Tlist_Use_Right_Window = 1
-let Tlist_Compact_Format = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_GainFocus_On_ToggleOpen = 1
-let Tlist_File_Fold_Auto_Close = 1
-
 " hack to solve bug in SQL files in ubuntu
 let g:omni_sql_no_default_maps = 1
 
 " custom mappings
 map <F1> :NERDTreeToggle<CR>
-map <F2> :TlistToggle<CR>
+map <F2> :TagbarToggle<CR>
 map <F10> :Bclose<CR>
 map <F11> :shell<CR>
 map <C-Left> <ESC>:bprev!<CR>
