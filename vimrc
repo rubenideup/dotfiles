@@ -14,6 +14,7 @@ set noerrorbells
 set ignorecase
 set visualbell t_vb=
 set cursorline
+set textwidth=120
 
 
 set t_Co=256
