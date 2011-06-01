@@ -30,10 +30,13 @@ let javaScript_fold=1
 let xml_syntax_folding=1
 
 " view special characters
-autocmd filetype xhtml,html,xml,php,yaml set list
+autocmd filetype xhtml,html,xml,php,yaml,htmltwig set list
+
+" apply special syntax colors
+autocmd BufRead *.twig set filetype=htmltwig
 
 autocmd filetype xhtml,html,xml set listchars=tab:▸\ 
-autocmd filetype php,yaml set listchars=tab:▸\ ,eol:¬
+autocmd filetype php,yaml,htmltwig set listchars=tab:▸\ ,eol:¬
 
 " directories for .swp files
 set directory=~/.vim/swp//,/tmp//
@@ -48,9 +51,6 @@ syntax on
 filetype on
 filetype indent on
 filetype plugin on
-
-" apply special syntax colors
-autocmd BufRead *.twig set filetype=twig
 
 " mark the lines above 120 columns
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
@@ -75,3 +75,4 @@ map <C-Right> <ESC>:bnext!<CR>
 
 nmap <silent> ,t :CommandT<CR>
 nmap <silent> ,b :CommandTBuffer<CR>
+
