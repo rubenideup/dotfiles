@@ -26,5 +26,14 @@ snippet %end
 # Named block
 snippet block
 	{% block ${1:name} %}${2}{% endblock %}
+# formatted date
 snippet f_date
 	{{ ${1:a_date}|date("${2:m/d/Y}") }}
+# macro
+snippet macro
+	{% macro ${1}(${2}) %}
+		${3}
+	{% endmacro %}
+# comments
+snippet #
+	{# ${1} #}
