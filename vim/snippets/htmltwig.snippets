@@ -6,6 +6,13 @@ snippet if
 	{% if ${1} %}
 		${2}
 	{% endif %}
+# if/else
+snippet elif
+	{% if ${1} %}
+		${2}
+	{% else %}
+	  ${3}
+	{% endif %}
 # for
 snippet for
 	{% for ${2:} in ${1} %}
