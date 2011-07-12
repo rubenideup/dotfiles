@@ -1,0 +1,77 @@
+## symfony 2 snippets
+
+# common namespaces
+snippet usecont
+	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+snippet useorm
+	use Doctrine\ORM\Mapping as ORM;
+snippet useassert
+	use Symfony\Component\Validator\Constraints as Assert;
+snippet ormrepo
+	 @ORM\Entity(repositoryClass="Desymfony\DesymfonyBundle\Entity\PonenteRepository")
+snippet usecons
+	use Symfony\Component\Validator\Constraint;
+snippet useval
+	use Symfony\Component\Validator\ConstraintValidator;
+snippet kerfix
+	new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
+snippet autofix
+	'Doctrine\\Common\\DataFixtures' => __DIR__.'/../vendor/doctrine-fixtures/lib',
+snippet usefix
+	use Doctrine\Common\DataFixtures\AbstractFixture;
+snippet userepo
+	use Doctrine\ORM\EntityRepository;
+
+# Doctrine ORM snippets
+snippet orml
+	/**
+	 * @ORM\Column(type="${1:string}", length="${2}")
+	 */
+	protected $${3};
+snippet orms
+	/**
+	 * @ORM\Column(type="${1:string}")
+	 */
+snippet orm
+	/**
+	 * @ORM\Column(type="${1:string}")
+	 */
+	protected $${2};
+snippet ormi
+	/**
+	* @ORM\Id
+	* @ORM\Column(type="integer")
+	* @ORM\GeneratedValue(strategy="IDENTITY")
+	*/
+snippet m2m
+	/**
+	 * @ORM\ManyToMany(targetEntity="${1}", inversedBy="${2}")
+	 * @ORM\JoinTable(name="${3}",
+	 *      joinColumns={@ORM\JoinColumn(name="${4}_id", referencedColumnName="id")},
+	 *      inverseJoinColumns={@ORM\JoinColumn(name="${5}_id", referencedColumnName="id")}
+	 * )
+	 */
+snippet m2ms
+	/**
+	 * @ORM\ManyToMany(targetEntity="${1}", mappedBy="${2}")
+	 */
+snippet m21
+	/**
+	 * @ORM\ManyToOne(targetEntity="${1}", inversedBy="${2}", cascade={"remove"})
+	 * @ORM\JoinColumn(name="${3}_id", referencedColumnName="id")
+	 */
+snippet 12m
+	/**
+	 * @ORM\OneToMany(targetEntity="${1}", mappedBy="${2}")
+	 */
+snippet ormt
+	/**
+	* @ORM\Table(name="${1}")
+	* @ORM\Entity
+	*/
+snippet ormid
+	/**
+	 * @ORM\Id
+	 * @ORM\Column(type="integer")
+	 * @ORM\GeneratedValue(strategy="IDENTITY")
+	 */
