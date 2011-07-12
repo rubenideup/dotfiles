@@ -15,6 +15,7 @@ set ignorecase
 set visualbell t_vb=
 set cursorline
 set textwidth=120
+set nolazyredraw " don't redraw screen while executing macros
 
 
 set t_Co=256
