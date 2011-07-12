@@ -22,3 +22,6 @@ alias rscp="rsync --partial --progress --rsh=ssh"
 # mac pbcopy and pbpaste utilities
 alias pbcopy="xsel --clipboard --input"
 alias pbpaste="xsel --clipboard --output"
+
+# tail php error logs
+alias phplog="tail -f /tmp/php_error.log"
