@@ -66,6 +66,9 @@ let g:SuperTabDefaultCompletionType = "context"
 " hack to solve bug in SQL files in ubuntu
 let g:omni_sql_no_default_maps = 1
 
+" ack plugin configuration
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+
 " custom mappings
 map <F1> :NERDTreeToggle<CR>
 map <F2> :TagbarToggle<CR>
