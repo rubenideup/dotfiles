@@ -12,15 +12,26 @@ set tabstop=2
 set shiftwidth=2
 set noerrorbells
 set ignorecase
-set visualbell t_vb=
 set cursorline
 set textwidth=120
 set nolazyredraw " don't redraw screen while executing macros
 
+" basic ui options
+set visualbell t_vb=
+set shm=atIWswxrnmlf " message formats
+set ruler
+set laststatus=2
+set statusline=%f
+set showcmd
+set showmode
 
 set t_Co=256
 set background=dark
 colorscheme wombat256
+
+" vim behaviour
+command! W :w " for mistyping :w as :W
+
 
 " folding options
 set foldmethod=syntax
