@@ -4,6 +4,9 @@
 
 export PATH=${PATH}:/opt/android-sdk-linux_x86/tools
 
+# set vi mode
+set -o vi
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
