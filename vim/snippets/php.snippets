@@ -21,6 +21,8 @@ snippet usefix
 	use Doctrine\Common\DataFixtures\AbstractFixture;
 snippet userepo
 	use Doctrine\ORM\EntityRepository;
+snippet usewebt
+	use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 # Doctrine ORM snippets
 snippet orml
@@ -58,7 +60,9 @@ snippet m2ms
 snippet m21
 	/**
 	 * @ORM\ManyToOne(targetEntity="${1}", inversedBy="${2}", cascade={"remove"})
-	 * @ORM\JoinColumn(name="${3}_id", referencedColumnName="id")
+	 * @ORM\JoinColumns({
+	 *     @ORM\JoinColumn(name="${3}_id", referencedColumnName="id")
+	 * })
 	 */
 snippet 12m
 	/**
