@@ -31,7 +31,6 @@ colorscheme wombat256
 " vim behaviour
 command! W :w " for mistyping :w as :W
 
-
 " folding options
 set foldmethod=syntax
 set foldlevel=1
@@ -39,15 +38,6 @@ set foldcolumn=3
 let php_folding=1
 let javaScript_fold=1
 let xml_syntax_folding=1
-
-" view special characters
-autocmd filetype xhtml,html,xml,php,yaml,htmltwig set list
-
-" apply special syntax colors
-autocmd BufRead *.twig set filetype=htmltwig
-
-autocmd filetype xhtml,html,xml set listchars=tab:▸\ 
-autocmd filetype php,yaml,htmltwig set listchars=tab:▸\ ,eol:¬
 
 " directories for .swp files
 set directory=~/.vim/swp//,/tmp//
@@ -126,7 +116,7 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 
 "**************************************************************
-"                Autocmds an keybindings                      *
+"                Autocmds and keybindings                     *
 "**************************************************************
 source ~/.vimrc-keymaps
 source ~/.vimrc-au

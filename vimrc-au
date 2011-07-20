@@ -1,3 +1,4 @@
+" file warmups
 autocmd BufNewFile *.go s-^-package main\r\rimport "fmt"\r\rfunc main() {\r\r}-
 autocmd BufNewFile *.pm s-^-package XXX;\r\ruse strict;\ruse warnings;\r\r1;-
 autocmd BufNewFile *.pl s-^-#!/usr/bin/perl\r\ruse strict;\ruse warnings;\r\r-
@@ -28,3 +29,12 @@ autocmd BufWritePre *.php,*.twig,*.yml  :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.sql               :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.html,*.htm,*.xml  :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.c,*.cpp,*.h,*.hpp :call <SID>StripTrailingWhitespaces()
+
+" syntax colors
+autocmd BufRead *.twig set filetype=htmltwig
+
+" view special characters
+autocmd filetype xhtml,html,xml,php,yaml,htmltwig set list
+autocmd filetype xhtml,html,xml set listchars=tab:▸\ 
+autocmd filetype php,yaml,htmltwig set listchars=tab:▸\ ,eol:¬
+
