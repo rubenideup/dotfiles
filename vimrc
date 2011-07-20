@@ -70,9 +70,6 @@ filetype plugin on
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%121v.\+/
 
-" remove trailing spaces on save
-autocmd BufWritePre *.php,*.sql,*.xml,*.twig,*.c,*.cpp,*.h,*.hpp :%s/\s\+$//e
-
 " hack to solve bug in SQL files in ubuntu
 let g:omni_sql_no_default_maps = 1
 

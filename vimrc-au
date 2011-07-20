@@ -5,3 +5,26 @@ autocmd BufNewFile *.sh s-^-#!/bin/bash\r\r-
 autocmd BufNewFile *.py s-^-#!/usr/bin/python\r\r-
 autocmd BufNewFile *.rb s-^-#!/usr/bin/ruby\r\r-
 autocmd BufNewFile *.c  s-^-#include <stdio.h>\r\rint main(int argc, char** argv) {\r\treturn 0;\r}-
+
+" remove trailing spaces
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+autocmd BufWritePre *.py                :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.rb                :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.sh                :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.js,*.json         :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.css               :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.php,*.twig,*.yml  :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.sql               :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.html,*.htm,*.xml  :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.c,*.cpp,*.h,*.hpp :call <SID>StripTrailingWhitespaces()
