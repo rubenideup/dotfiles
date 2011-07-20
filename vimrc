@@ -20,7 +20,6 @@ set nolazyredraw " don't redraw screen while executing macros
 set visualbell t_vb=
 set shm=atIWswxrnmlf " message formats
 set ruler
-set laststatus=2
 set statusline=%f
 set showcmd
 set showmode
@@ -90,4 +89,4 @@ map <C-Right> <ESC>:bnext!<CR>
 
 nmap <silent> ,t :CommandT<CR>
 nmap <silent> ,b :CommandTBuffer<CR>
-
+let g:CommandTCancelMap=['<ESC>','<C-c>'] " remap the close action to solve konsole terminal problems
