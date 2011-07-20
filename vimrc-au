@@ -20,15 +20,15 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
-autocmd BufWritePre *.py                :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre *.rb                :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre *.sh                :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre *.js,*.json         :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre *.css               :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre *.php,*.twig,*.yml  :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre *.sql               :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre *.html,*.htm,*.xml  :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre *.c,*.cpp,*.h,*.hpp :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.py             :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.rb             :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.sh             :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.{js,json}      :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.css            :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.{php,twig,yml} :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.sql            :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.{html,htm,xml} :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.{c,cpp,h,hpp}  :call <SID>StripTrailingWhitespaces()
 
 " syntax colors
 autocmd BufRead *.twig set filetype=htmltwig
@@ -37,4 +37,8 @@ autocmd BufRead *.twig set filetype=htmltwig
 autocmd filetype xhtml,html,xml,php,yaml,htmltwig set list
 autocmd filetype xhtml,html,xml set listchars=tab:▸\ 
 autocmd filetype php,yaml,htmltwig set listchars=tab:▸\ ,eol:¬
+
+" Remember last location in file
+au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal g'\"" | endif
 

@@ -15,6 +15,7 @@ set ignorecase
 set cursorline
 set textwidth=120
 set nolazyredraw " don't redraw screen while executing macros
+set encoding=utf-8
 
 " basic ui options
 set visualbell t_vb=
@@ -118,5 +119,10 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 "**************************************************************
 "                Autocmds and keybindings                     *
 "**************************************************************
+
 source ~/.vimrc-keymaps
-source ~/.vimrc-au
+
+if has("autocmd")
+  source ~/.vimrc-au
+endif
+
