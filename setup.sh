@@ -20,6 +20,8 @@ install() {
   echo "Checking symlinks ..."
   mksymlink ~/.vimrc
   mksymlink ~/.vim
+  mksymlink ~/.vim-keymaps
+  mksymlink ~/.vim-au
   mksymlink ~/.bashrc
   mksymlink ~/.bash_aliases
 
@@ -37,15 +39,9 @@ install_helper_scripts() {
   fi
 }
 
-update_submodules() {
-  echo "Updating submodules ..."
-  cd ~/.dotfiles
-  git submodule init
-  git submodule update
-}
-
 install
-update_submodules
+echo "Installing bundles..."
+ruby `pwd`/vim/bin/vim-update-bundles.rb
 #install_helper_scripts
 
 echo "Done."

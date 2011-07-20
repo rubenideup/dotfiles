@@ -1,0 +1,4 @@
+map <F10> :Bclose<CR>
+map <F11> :shell<CR>
+map <C-Left> <ESC>:bprev!<CR>
+map <C-Right> <ESC>:bnext!<CR>

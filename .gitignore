@@ -1,2 +1,5 @@
 vim/swp
 tags
+vim/doc
+vim/bundle/*
+vim/.netrwhist

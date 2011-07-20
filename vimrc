@@ -51,7 +51,9 @@ autocmd filetype php,yaml,htmltwig set listchars=tab:▸\ ,eol:¬
 
 " directories for .swp files
 set directory=~/.vim/swp//,/tmp//
-set wildignore+=app/build/** " ignore symfony project generated data (doc, coverage, etc.)
+
+" ignore symfony project generated data (doc, coverage, etc.)
+set wildignore+=app/build/**,vendor/**,app/cache/**
 
 " set gui font
 if has('gui_running')
@@ -71,23 +73,63 @@ match OverLength /\%121v.\+/
 " remove trailing spaces on save
 autocmd BufWritePre *.php,*.sql,*.xml,*.twig,*.c,*.cpp,*.h,*.hpp :%s/\s\+$//e
 
-" SuperTab completion mode
-let g:SuperTabDefaultCompletionType = "context"
-
 " hack to solve bug in SQL files in ubuntu
 let g:omni_sql_no_default_maps = 1
 
-" ack plugin configuration
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
-" custom mappings
+"**************************************************************
+"                      Bundle plugins                         *
+"**************************************************************
+
+" Snipmate
+" --- BUNDLE: https://github.com/msanders/snipmate.vim.git
+
+
+" NerdTree
+" --- BUNDLE: https://github.com/scrooloose/nerdtree.git
 map <F1> :NERDTreeToggle<CR>
-map <F2> :TagbarToggle<CR>
-map <F10> :Bclose<CR>
-map <F11> :shell<CR>
-map <C-Left> <ESC>:bprev!<CR>
-map <C-Right> <ESC>:bnext!<CR>
 
+
+" SuperTab
+" --- BUNDLE: https://github.com/ervandew/supertab.git
+let g:SuperTabDefaultCompletionType = "context" " SuperTab completion mode
+
+
+" Vim surround
+" --- BUNDLE: https://github.com/tpope/vim-surround.git
+
+
+" PHP Syntax (updated to 5.3)
+" --- BUNDLE: https://github.com/vim-scripts/php.vim--Nicholson.git
+
+
+" PHP Check syntax
+" --- BUNDLE: https://github.com/tomtom/checksyntax_vim.git
+
+
+" Command-T
+" --- BUNDLE: https://github.com/vim-scripts/Command-T.git
 nmap <silent> ,t :CommandT<CR>
 nmap <silent> ,b :CommandTBuffer<CR>
 let g:CommandTCancelMap=['<ESC>','<C-c>'] " remap the close action to solve konsole terminal problems
+
+
+" TagBar
+" --- BUNDLE: git://github.com/majutsushi/tagbar
+map <F2> :TagbarToggle<CR>
+
+
+" Tabular
+" --- BUNDLE: https://github.com/godlygeek/tabular.git
+
+
+" Ack, a better grep 
+" --- BUNDLE: https://github.com/mileszs/ack.vim
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+
+
+"**************************************************************
+"                Autocmds an keybindings                      *
+"**************************************************************
+source ~/.vimrc-keymaps
+source ~/.vimrc-au
