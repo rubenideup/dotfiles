@@ -51,6 +51,7 @@ autocmd filetype php,yaml,htmltwig set listchars=tab:▸\ ,eol:¬
 
 " directories for .swp files
 set directory=~/.vim/swp//,/tmp//
+set wildignore+=app/build/** " ignore symfony project generated data (doc, coverage, etc.)
 
 " set gui font
 if has('gui_running')
