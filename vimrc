@@ -47,9 +47,13 @@ let php_folding=1
 let javaScript_fold=1
 let xml_syntax_folding=1
 
+" php options
+let php_sql_query=1
+let php_htmlInStrings=1
+
 " directories for .swp files
 set directory=~/.vim/swp//,/tmp//
-set wildignore+=app/build/**,vendor/**,app/cache/** " ignore symfony project data (doc, coverage, etc.)
+set wildignore+=**/build/**,vendor/**,**/cache/** " ignore symfony project data (doc, coverage, etc.)
 set wildignore+=*.o,*.phar,*.php~
 
 syntax on
@@ -124,6 +128,10 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 " --- BUNDLE: http://github.com/Raimondi/delimitMate.git
 let delimitMate_smart_quotes = 1
 let delimitMate_visual_leader = ","
+
+
+" Lorem ipsum dummy text generator
+" --- BUNDLE: https://github.com/vim-scripts/loremipsum.git
 
 
 "**************************************************************
