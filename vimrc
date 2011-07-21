@@ -3,6 +3,7 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 set nocompatible
+set ttyfast
 set number
 set smartindent
 set cindent
@@ -24,10 +25,16 @@ set ruler
 set statusline=%f
 set showcmd
 set showmode
+set mouse=a
 
 set t_Co=256
 set background=dark
 colorscheme wombat256
+
+" set gui font
+if has('gui_running')
+  set guifont=Monaco\ 10
+endif
 
 " vim behaviour
 command! W :w " for mistyping :w as :W
@@ -42,16 +49,9 @@ let xml_syntax_folding=1
 
 " directories for .swp files
 set directory=~/.vim/swp//,/tmp//
+set wildignore+=app/build/**,vendor/**,app/cache/** " ignore symfony project data (doc, coverage, etc.)
+set wildignore+=*.o,*.phar,*.php~
 
-" ignore symfony project generated data (doc, coverage, etc.)
-set wildignore+=app/build/**,vendor/**,app/cache/**
-
-" set gui font
-if has('gui_running')
-  set guifont=Monaco\ 10
-endif
-
-set mouse=a
 syntax on
 filetype on
 filetype indent on
@@ -114,6 +114,16 @@ map <F2> :TagbarToggle<CR>
 " Ack, a better grep 
 " --- BUNDLE: https://github.com/mileszs/ack.vim
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+
+
+" Match it
+" --- BUNDLE: https://github.com/vim-scripts/matchit.zip.git
+
+
+" Less annoying delimiters - DelimitMate
+" --- BUNDLE: http://github.com/Raimondi/delimitMate.git
+let delimitMate_smart_quotes = 1
+let delimitMate_visual_leader = ","
 
 
 "**************************************************************
