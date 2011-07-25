@@ -68,6 +68,24 @@ match OverLength /\%121v.\+/
 " hack to solve bug in SQL files in ubuntu
 let g:omni_sql_no_default_maps = 1
 
+function! UpdateBundles()
+  let cmd = "ruby ~/.dotfiles/vim/bin/vim-update-bundles.rb"
+  echo "running: ".cmd." this could take a while ..."
+
+  let tmpfile = tempname()
+  let cmd = cmd." > ".tmpfile
+  call system(cmd)
+
+  let efm_bak = &efm
+  set efm=%m
+  execute "silent! cgetfile ".tmpfile
+  let &efm = efm_bak
+  botright copen
+
+  call delete(tmpfile)
+endfunction
+
+command! -complete=file UpdateBundles call UpdateBundles()
 
 "**************************************************************
 "                      Bundle plugins                         *

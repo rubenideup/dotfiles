@@ -1,7 +1,0 @@
-Installation:
-  git clone git://github.com/mmacia/dotfiles.git ~/.dotfiles
-
-Create symlinks and update submodules:
-  cd ~/.dotfiles
-  ./setup.sh
-
