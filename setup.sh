@@ -1,34 +1,11 @@
 #!/bin/sh
 
 # this script maps my configuration files in a fresh system.
-# does not delete any configuration file or directory, if any exists 
+# does not delete any configuration file or directory, if any exists
 # the install process simply rename it to *.old
 
 # you can safetely run this install script many times in order to update
-# git submodules and check symlinks 
-
-mksymlink() {
-  BASE=$(basename "$1")
-
-  if [ ! -L "$1" ]; then
-    mv ~/.dotfiles/$BASE $1.old 
-    ln -s ~/.dotfiles/$BASE $1
-  fi
-}
-
-install() {
-  echo "Checking symlinks ..."
-  mksymlink ~/.vimrc
-  mksymlink ~/.vim
-  mksymlink ~/.vim-keymaps
-  mksymlink ~/.vim-au
-  mksymlink ~/.bashrc
-  mksymlink ~/.bash_aliases
-
-  if [ ! -d ~/.vim/swp ]; then
-    mkdir ~/.vim/swp
-  fi
-}
+# git submodules and check symlinks
 
 install_helper_scripts() {
   echo "Installing helper scripts ..."
@@ -39,7 +16,20 @@ install_helper_scripts() {
   fi
 }
 
-install
+echo "Saving old files ..."
+for file in ~/.vimrc ~/.vim ~/.vimrc-keymaps ~/.vimrc-au ~/.bashrc ~/.bash_aliases; do
+  if [ ! -L $file ]; then
+    mv $file "$file.`date +$s`.old"
+  else
+    rm -f $file
+  fi
+done
+
+echo "Linking dot files ..."
+for file in vim vimrc vimrc-keymaps vimrc-au bashrc bash_aliases; do
+  ln -s "`pwd`/$file" "$HOME/.$file"
+done
+
 echo "Installing bundles..."
 ruby `pwd`/vim/bin/vim-update-bundles.rb
 #install_helper_scripts
