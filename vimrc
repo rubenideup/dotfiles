@@ -96,60 +96,61 @@ command! -complete=file UpdateBundles call UpdateBundles()
 
 
 " NerdTree
-" --- BUNDLE: https://github.com/scrooloose/nerdtree.git
+" Bundle: https://github.com/scrooloose/nerdtree.git
 map <F1> :NERDTreeToggle<CR>
 
 
 " SuperTab
-" --- BUNDLE: https://github.com/ervandew/supertab.git
+" Bundle: https://github.com/ervandew/supertab.git
 let g:SuperTabDefaultCompletionType = "context" " SuperTab completion mode
 
 
 " Vim surround
-" --- BUNDLE: https://github.com/tpope/vim-surround.git
+" Bundle: https://github.com/tpope/vim-surround.git
 
 
 " PHP Syntax (updated to 5.3)
-" --- BUNDLE: https://github.com/vim-scripts/php.vim--Nicholson.git
+" Bundle: https://github.com/vim-scripts/php.vim--Nicholson.git
 
 
 " PHP Check syntax
-" --- BUNDLE: https://github.com/tomtom/checksyntax_vim.git
+" Bundle: https://github.com/tomtom/checksyntax_vim.git
 
 
 " Command-T
-" --- BUNDLE: https://github.com/vim-scripts/Command-T.git
+" Bundle: https://github.com/vim-scripts/Command-T.git
+" BundleCommand: cd ruby/command-t; ruby extconf.rb; make
 nmap <silent> ,t :CommandT<CR>
 nmap <silent> ,b :CommandTBuffer<CR>
 let g:CommandTCancelMap=['<ESC>','<C-c>'] " remap the close action to solve konsole terminal problems
 
 
 " TagBar
-" --- BUNDLE: git://github.com/majutsushi/tagbar
+" Bundle: git://github.com/majutsushi/tagbar
 map <F2> :TagbarToggle<CR>
 
 
 " Tabular
-" --- BUNDLE: https://github.com/godlygeek/tabular.git
+" Bundle: https://github.com/godlygeek/tabular.git
 
 
 " Ack, a better grep 
-" --- BUNDLE: https://github.com/mileszs/ack.vim
+" Bundle: https://github.com/mileszs/ack.vim
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 
 " Match it
-" --- BUNDLE: https://github.com/vim-scripts/matchit.zip.git
+" Bundle: https://github.com/vim-scripts/matchit.zip.git
 
 
 " Less annoying delimiters - DelimitMate
-" --- BUNDLE: http://github.com/Raimondi/delimitMate.git
+" Bundle: http://github.com/Raimondi/delimitMate.git
 let delimitMate_smart_quotes = 1
 let delimitMate_visual_leader = ","
 
 
 " Lorem ipsum dummy text generator
-" --- BUNDLE: https://github.com/vim-scripts/loremipsum.git
+" Bundle: https://github.com/vim-scripts/loremipsum.git
 
 
 "**************************************************************

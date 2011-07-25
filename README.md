@@ -32,9 +32,11 @@ Try to find your plugin/bundle [here](http://github.com/vim-scripts "vim-scripts
 
 Now, open your `vimrc` and add the following line
 
-    # --- BUNDLE http://path-to-the-git-repository
+    # Bundle http://path-to-the-git-repository
 
 And now run `:UpdateBundles` inside vim.
+
+Read the `vim-update-bundles` linked above to more detailed syntax.
 
 ### How do I remove a bundle ?
 
