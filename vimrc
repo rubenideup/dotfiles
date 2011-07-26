@@ -92,7 +92,7 @@ command! -complete=file UpdateBundles call UpdateBundles()
 "**************************************************************
 
 " Snipmate
-" --- BUNDLE: https://github.com/msanders/snipmate.vim.git
+" Bundle: https://github.com/msanders/snipmate.vim.git
 
 
 " NerdTree
