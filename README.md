@@ -1,17 +1,22 @@
 Installation
 ------------
-You need an standalone ruby interpreter. Automatic download/update of bundles is handled by a ruby script.
+You need a standalone ruby interpreter. Automatic download/update of bundles is handled by a ruby script.
 It's fine to have a vim without ruby support.
 
 Installation is performed by user, and not system-wide. Your old `.vim/` and `.vimrc` files are saved
 as `~/.$file-name.%date%.old` . To install, simple input this commands:
 
     $ git clone git://github.com/mmacia/dotfiles.git ~/.dotfiles
-    $ cd .dotfiles
+    $ cd ~/.dotfiles
     $ ./setup.sh
 
 And you're done! You may wanna edit your `~/.vimrc` or `~/.vimrc-keymaps` , but i've already provided it
 with sensible defaults ;)
+
+Note that if you want to use Command-T plugin, first you have to install the packages `ruby-dev` and `gcc`. 
+This plugin needs to compile a small part of native code, although this compilation is managed internaly by the 
+update process, it can cause errors if the compiler or development files are not installed. Please read the Command-T 
+[documentation](https://wincent.com/products/command-t) for a full description of installation requirements. 
 
 Managing plugins/bundles
 ------------------------
@@ -22,13 +27,13 @@ Nice isn't?
 
 A helper is included to manage bundles and stay them always updated. This is provided by the useful ruby
 script [vim-update-bundles](http://github.com/bronson/vim-update-bundles "Vim-update-bundles"), which works with git
-repositories. A [mirror](http://github.com/vim-scripts "vim-scripts") is provided to all plugins in `www.vim.org`, 
+repositories. A [mirror](http://vim-scripts.org "vim-scripts") is provided to all plugins in `www.vim.org`, 
 so you can use all plugins from `www.vim.org` without further problems. 
 
 ### How do I install new bundles?
 
 First, you need to make sure that the bundle you want is in a git repository. 
-Try to find your plugin/bundle [here](http://github.com/vim-scripts "vim-scripts").
+Try to find your plugin/bundle [here](http://vim-scripts.org/vim/scripts.html "vim-scripts").
 
 Now, open your `vimrc` and add the following line
 

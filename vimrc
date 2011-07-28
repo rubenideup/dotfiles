@@ -31,11 +31,6 @@ set t_Co=256
 set background=dark
 colorscheme wombat256
 
-" set gui font
-if has('gui_running')
-  set guifont=Monaco\ 10
-endif
-
 " vim behaviour
 command! W :w " for mistyping :w as :W
 
@@ -92,7 +87,7 @@ command! -complete=file UpdateBundles call UpdateBundles()
 "**************************************************************
 
 " Snipmate
-" --- BUNDLE: https://github.com/msanders/snipmate.vim.git
+" Bundle: https://github.com/msanders/snipmate.vim.git
 
 
 " NerdTree
