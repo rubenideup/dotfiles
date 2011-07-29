@@ -19,7 +19,7 @@ set nolazyredraw " don't redraw screen while executing macros
 set encoding=utf-8
 
 " basic ui options
-set visualbell t_vb=
+"set visualbell t_vb=
 set shm=atIWswxrnmlf " message formats
 set ruler
 set statusline=%f
@@ -146,6 +146,11 @@ let delimitMate_visual_leader = ","
 
 " Lorem ipsum dummy text generator
 " Bundle: https://github.com/vim-scripts/loremipsum.git
+
+
+" ConqueShell
+" Bundle: https://github.com/vim-scripts/Conque-Shell.git
+let g:ConqueTerm_Color = 1
 
 
 "**************************************************************
