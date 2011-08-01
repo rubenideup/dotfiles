@@ -42,3 +42,5 @@ autocmd filetype php,yaml,htmltwig set listchars=tab:▸\ ,eol:¬
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
 
+" nicer comments
+autocmd BufNewFile,BufRead *.h,*.php set comments=s:/**,mb:*,ex:*/
