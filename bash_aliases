@@ -4,7 +4,7 @@ alias la='ls -la'
 if which trash &> /dev/null; then
   alias rm='trash'
 else
-  echo "Your rm's may harm you. Install trash package: apt-get install trash"
+  echo "Your rm's may harm you. Install trash package: apt-get install trash-cli"
 fi
 
 alias cd..='cd ..'
