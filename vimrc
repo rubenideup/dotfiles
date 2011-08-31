@@ -50,6 +50,7 @@ let php_htmlInStrings=1
 set directory=~/.vim/swp//,/tmp//
 set wildignore+=**/build/**,vendor/**,**/cache/** " ignore symfony project data (doc, coverage, etc.)
 set wildignore+=*.o,*.phar,*.php~
+set tags=tags;/
 
 syntax on
 filetype on
