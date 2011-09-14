@@ -83,6 +83,17 @@ endfunction
 
 command! -complete=file UpdateBundles call UpdateBundles()
 
+
+"----------------------------------------------
+" black magic section, handle it with caution
+"-----------------------------------------------
+
+" variable name refactoring for local and global scopes
+" move te cursor to a variable name and pres gr o gR to apply the refactoring
+nnoremap gr gd[{V%:s/<C-R>///gc<left><left><left>
+nnoremap gR gD[{V%:s/<C-R>///gc<left><left><left>
+
+
 "**************************************************************
 "                      Bundle plugins                         *
 "**************************************************************
