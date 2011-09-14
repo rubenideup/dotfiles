@@ -2,49 +2,192 @@
 snippet modeli
 	/* vim: set expandtab tabstop=4 shiftwidth=4: */
 
+snippet auth
+	Moisés Maciá <mmacia@gmail.com>
+snippet auth2
+	Moisés Maciá <moises.macia@ideup.com>
+
 ## symfony 2 snippets
 
+snippet em
+	$em = $this->get('doctrine')->getEntityManager();
+
 # common namespaces
-snippet usecont
-	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 snippet useorm
 	use Doctrine\ORM\Mapping as ORM;
-snippet useassert
-	use Symfony\Component\Validator\Constraints as Assert;
-snippet usecons
-	use Symfony\Component\Validator\Constraint;
 snippet useval
-	use Symfony\Component\Validator\ConstraintValidator;
-snippet usefix
 	use Doctrine\Common\DataFixtures\AbstractFixture;
-snippet userepo
-	use Doctrine\ORM\EntityRepository;
 snippet usewebt
 	use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-snippet useem
-	use Doctrine\ORM\EntityManager;
+
+
+# symfony2 boilerplate code
+snippet sfent
+	namespace ${1:Ideup}\${2:Acme}Bundle\Entity;
+
+	use Doctrine\ORM\Mapping as ORM;
+
+	/**
+	 * ${3:`Filename()`} Model
+	 *
+	 * @ORM\Entity(repositoryClass="$1\$2Bundle\Entity\$3Repository")
+	 * @ORM\Table(name="${4}")
+	 * @ORM\HasLifecycleCallbacks()
+	 */
+	class $3
+	{
+	    /**
+	     * @ORM\Id
+	     * @ORM\Column(type="integer")
+	     * @ORM\GeneratedValue(strategy="IDENTITY")
+	     */
+		protected $id;
+
+		${5:// code ...}
+	}
+snippet sfrepo
+	namespace ${1:Ideup}\${2:Acme}Bundle\Entity;
+
+	use Doctrine\ORM\EntityRepository;
+
+	/**
+	 * ${3:`Filename()`} Repository
+	 */
+	class $3Repository extends EntityRepository
+	{
+	    /**
+	     * @return array
+	     */
+	    public function findByMyAwesomeCriteria($${4:criteria})
+	    {
+	        $query = $this->_em->createQuery(${5:/* put here your DQL */});
+	        $query->setParameters(array('criteria' => $$4));
+
+	        return $query->getResult();
+	    }
+	}
+snippet sfcont
+	namespace ${1:Ideup}\${2:Acme}Bundle\Controller;
+
+	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+	use Symfony\Component\HttpFoundation\Response;
+	use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+	use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+	use JMS\SecurityExtraBundle\Annotation\Secure;
+
+	/**
+	 * ${3:`Filename()`} Controller
+	 */
+	class $3Controller
+	{
+	    /**
+	     * @Route("/index", name="index")
+	     * @Secure(roles="ROLE_USER")
+	     * @Template("$1$2Bundle:$3:index.html.twig")
+	     */
+	    public function indexAction()
+	    {
+	        ${4:// code ...}
+	        return array();
+	    }
+	}
+snippet sfformtype
+	namespace ${1:Ideup}\${2:Acme}Bundle\Form\Type;
+
+	use Symfony\Component\Form\AbstractType;
+	use Symfony\Component\Form\FormBuilder;
+
+	/**
+	 * ${3:`Filename()`} form type
+	 */
+	class $3 extends AbstractType
+	{
+	    /**
+	     * @inheritdoc
+	     */
+	    public function buildForm(FormBuilder $builder, array $options)
+	    {
+	        $builder->add('fieldName', 'text', array('required' => false))
+	                ->add(${4:/* your field here ...*/});
+	    }
+
+	    /**
+	     * @inheritdoc
+	     */
+	    public function getDefaultOptions(array $options)
+	    {
+	        return array(
+	            'data_class' => '$1\$2Bundle\Form\$3Request',
+	        );
+	    }
+
+	    public function getName()
+	    {
+	        return '$3';
+	    }
+	}
+snippet sfformhandler
+	namespace ${1:Ideup}\${2:Acme}Bundle\Form\Handler;
+
+	use Symfony\Component\Form\Form;
+	use Symfony\Component\HttpFoundation\Request;
+	use Symfony\Component\DependencyInjection\ContainerInterface;
+
+	/**
+	 * ${3:`Filename()`} form handler
+	 */
+	class $3 extends AbstractHandler
+	{
+	    /**
+	     * @param object $entity
+	     * @return bool
+	     */
+	    public function process($entity)
+	    {
+	        ${4:// code ...}
+	        return false;
+	    }
+	}
+snippet sfform
+	namespace ${1:Ideup}\${2:Acme}Bundle\Form;
+
+	use Symfony\Component\Validator\Constraints as Assert;
+	use Symfony\Component\Validator\ExecutionContext;
+
+	/**
+	 * ${3:`Filename()`} form fields, asserts and custom validators
+	 *
+	 * @Assert\callback(methods={"isValidMyCustomAssert"})
+	 */
+	class $3
+	{
+		/**
+		 * @var mixed $${4:myField}
+		 */
+		public $$4;
+
+		${5:// field attributes here ...}
+
+		/**
+		 * @param ExecutionContext $context
+		 */
+		public function isValidMyCustomAssert(ExecutionContext $context)
+		{
+			if ($this->$4 !== null) {
+				$propertyPath = $context->getPropertyPath().'.$4';
+				$context->setPropertyPath($propertyPath);
+				$context->addViolation('My custom validator fails', array(), null);
+			}
+		}
+	}
+
 
 # Doctrine ORM snippets
-snippet orml
-	/**
-	 * @ORM\Column(type="${1:string}", length="${2}")
-	 */
-	protected $${3};
-snippet orms
-	/**
-	 * @ORM\Column(type="${1:string}")
-	 */
 snippet orm
 	/**
 	 * @ORM\Column(type="${1:string}")
 	 */
 	protected $${2};
-snippet ormi
-	/**
-	* @ORM\Id
-	* @ORM\Column(type="integer")
-	* @ORM\GeneratedValue(strategy="IDENTITY")
-	*/
 snippet m2m
 	/**
 	 * @ORM\ManyToMany(targetEntity="${1}", inversedBy="${2}")
@@ -68,11 +211,6 @@ snippet 12m
 	/**
 	 * @ORM\OneToMany(targetEntity="${1}", mappedBy="${2}")
 	 */
-snippet ormt
-	/**
-	* @ORM\Table(name="${1}")
-	* @ORM\Entity
-	*/
 snippet ormid
 	/**
 	 * @ORM\Id
