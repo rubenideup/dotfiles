@@ -26,7 +26,7 @@ autocmd BufWritePre *.rb                     :call <SID>StripTrailingWhitespaces
 autocmd BufWritePre *.sh                     :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.{js,json}              :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.css                    :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre *.{php,twig,yml}         :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.{php,twig,ctp,yml}     :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.sql                    :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.{html,htm,xml,xsd,xsl} :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.{c,cpp,h,hpp}          :call <SID>StripTrailingWhitespaces()

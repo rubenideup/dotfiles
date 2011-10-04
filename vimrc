@@ -48,7 +48,8 @@ let php_htmlInStrings=1
 
 " directories for .swp files
 set directory=~/.vim/swp//,/tmp//
-set wildignore+=**/build/**,vendor/**,**/cache/** " ignore symfony project data (doc, coverage, etc.)
+" ignore symfony project data (doc, coverage, etc.)
+set wildignore+=**/build/**,vendor/**,**/cache/**,**/tmp/** 
 set wildignore+=*.o,*.phar,*.php~
 set tags=tags;/
 
@@ -163,6 +164,10 @@ let delimitMate_visual_leader = ","
 " ConqueShell
 " Bundle: https://github.com/vim-scripts/Conque-Shell.git
 let g:ConqueTerm_Color = 1
+
+
+" Increment
+" Bundle: https://github.com/vim-scripts/increment.vim.git
 
 
 "**************************************************************
