@@ -2,7 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-export PATH=${PATH}:/opt/android-sdk-linux_x86/tools
+export PATH=${PATH}:$HOME/local/bin:/opt/android-sdk-linux_x86/tools
 
 # set vi mode
 set -o vi
