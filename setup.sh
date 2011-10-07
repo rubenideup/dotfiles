@@ -19,7 +19,7 @@ install_helper_scripts() {
 echo "Saving old files ..."
 for file in ~/.vimrc ~/.vim ~/.vimrc-keymaps ~/.vimrc-au ~/.bashrc ~/.bash_aliases; do
   if [ ! -L $file ]; then
-    mv $file "$file.`date +$s`.old"
+    mv $file "$file.`date +%s`.old"
   else
     rm -f $file
   fi
