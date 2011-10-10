@@ -31,10 +31,10 @@ for file in vim vimrc vimrc-keymaps vimrc-au bashrc bash_aliases; do
 done
 
 echo "Installing bundles..."
-if [ ! $(wich ruby 2>/dev/null) ]; then
-  echo "ERROR: ruby is not installed. You have to install ruby and ruby-dev packages!"
-else
+if [ $(which ruby 2>/dev/null) ]; then
   ruby `pwd`/vim/bin/vim-update-bundles.rb
+else
+  echo "ERROR: ruby is not installed. You have to install ruby and ruby-dev packages!"
 fi
 
 install_helper_scripts
