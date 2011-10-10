@@ -10,9 +10,9 @@
 install_helper_scripts() {
   echo "Installing helper scripts ..."
 
-  # install ksshaskpass to remember SSH keys in KDE desktop
-  if [ -d ~/.kde -a ! -L ~/.kde/Autostart/ssh-add.sh ]; then
-    ln -s ~/.dotfiles/scripts/ssh-add.sh ~/.kde/Autostart/ssh-add.sh
+  # install autostart scripts
+  if [ -d ~/.kde -a ! -L ~/.kde/Autostart/bootstrap.sh ]; then
+    ln -s ~/.dotfiles/scripts/bootstrap.sh ~/.kde/Autostart/bootstrap.sh
   fi
 }
 
@@ -37,7 +37,7 @@ else
   ruby `pwd`/vim/bin/vim-update-bundles.rb
 fi
 
-#install_helper_scripts
+install_helper_scripts
 
 
 echo "Done."
