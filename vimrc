@@ -161,11 +161,6 @@ let delimitMate_visual_leader = ","
 " Bundle: https://github.com/vim-scripts/loremipsum.git
 
 
-" ConqueShell
-" Bundle: https://github.com/vim-scripts/Conque-Shell.git
-let g:ConqueTerm_Color = 1
-
-
 " Increment
 " Bundle: https://github.com/vim-scripts/increment.vim.git
 
