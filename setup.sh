@@ -16,6 +16,14 @@ install_helper_scripts() {
   fi
 }
 
+configure_git() {
+  git config --global alias.st status
+  git config --global alias.ci commit
+  git config --global alias.co checkout
+  git config --global alias.br branch
+  git config --global color.ui always
+}
+
 echo "Saving old files ..."
 for file in ~/.vimrc ~/.vim ~/.vimrc-keymaps ~/.vimrc-au ~/.bashrc ~/.bash_aliases; do
   if [ ! -L $file ]; then
@@ -39,5 +47,13 @@ fi
 
 install_helper_scripts
 
+# ask user to configure git options
+if [ $(which git 2>/dev/null) ]; then
+  read -p "Do you wish to autoconfigure Git (y/N) " choose
+  case $choose in
+    [yY]* ) configure_git; break;;
+    * ) echo "Skiping Git configuration."; break;;
+  esac
+fi
 
 echo "Done."
