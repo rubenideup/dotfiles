@@ -45,3 +45,9 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 
 " nicer comments
 autocmd BufNewFile,BufRead *.h,*.php set comments=s:/**,mb:*,ex:*/
+
+" auto-update .vimrc file each time you edit it
+augroup VimReload
+    au!
+    au BufWritePost $MYVIMRC source $MYVIMRC
+augroup END
