@@ -21,7 +21,7 @@ alias ubz="tar xvjf"
 alias rscp="rsync --partial --progress --rsh=ssh"
 
 # restart plasma
-alias kplasma="kbuildsycoca4 && kquitapp plasma-desktop && kstart plasma-desktop &> /dev/null"
+alias kplasma="kbuildsycoca4; kquitapp plasma-desktop; kstart plasma-desktop &> /dev/null"
 
 # mac pbcopy and pbpaste utilities
 alias pbcopy="xsel --clipboard --input"
