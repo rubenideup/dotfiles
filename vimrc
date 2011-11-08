@@ -22,7 +22,8 @@ set encoding=utf-8
 "set visualbell t_vb=
 set shm=atIWswxrnmlf " message formats
 set ruler
-set statusline=%f
+set laststatus=2
+set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 set showcmd
 set showmode
 set mouse=a
