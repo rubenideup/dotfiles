@@ -45,6 +45,18 @@ snippet sfent
 
 		${5:// code ...}
 	}
+snippet sfmodel
+	namespace ${1:Ideup}\${2:Acme}Bundle\Model;
+
+	use Doctrine\ORM\Mapping as ORM;
+
+	/**
+	 * ${3:`Filename()`} Model
+	 */
+	abstract class $3
+	{
+		${5:// code ...}
+	}
 snippet sfrepo
 	namespace ${1:Ideup}\${2:Acme}Bundle\Entity;
 
