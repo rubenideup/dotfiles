@@ -165,6 +165,10 @@ let delimitMate_visual_leader = ","
 " Increment
 " Bundle: https://github.com/vim-scripts/increment.vim.git
 
+" Zen Coding
+" Bundle: http://github.com/mattn/zencoding-vim.git
+let g:user_zen_leader_key = '<c-z>'
+
 
 "**************************************************************
 "                Autocmds and keybindings                     *
