@@ -31,10 +31,21 @@ set undoreload=10000 " maximum number lines to save for undo on a buffer reload
 set shm=atIWswxrnmlf " message formats
 set ruler
 set laststatus=2
-set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 set showcmd
 set showmode
 set mouse=a
+
+" set git branch on statusline
+function! GitBranch()
+    let branch = system("git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //'")
+    if branch != ''
+        return ' Git <' . substitute(branch, '\n', '', 'g') . '> '
+    en
+    return ''
+endfunction
+
+set statusline=%<\ %n:%f\ %m%r%y%=%{GitBranch()}%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
+
 
 set t_Co=256
 set background=dark
