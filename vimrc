@@ -20,6 +20,12 @@ set encoding=utf-8
 set exrc           " enable per-directory .vimrc files
 set secure         " disable unsafe commands in local .vimrc files
 
+" persistent undo configuration (vim 7.3 or greater)
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=1000  " maximum number of changes that can be undoed
+set undoreload=10000 " maximum number lines to save for undo on a buffer reload
+
 " basic ui options
 "set visualbell t_vb=
 set shm=atIWswxrnmlf " message formats
@@ -167,9 +173,15 @@ let delimitMate_visual_leader = ","
 " Increment
 " Bundle: https://github.com/vim-scripts/increment.vim.git
 
+
 " Zen Coding
 " Bundle: http://github.com/mattn/zencoding-vim.git
 let g:user_zen_leader_key = '<c-z>'
+
+
+" Gundo
+" Bundle: http://github.com/sjl/gundo.vim.git
+nnoremap <F3> :GundoToggle<CR>
 
 
 "**************************************************************
