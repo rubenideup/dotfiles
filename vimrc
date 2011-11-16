@@ -197,6 +197,7 @@ let delimitMate_visual_leader = ","
 " Zen Coding
 " Bundle: http://github.com/mattn/zencoding-vim.git
 let g:user_zen_leader_key = '<c-z>'
+let g:user_zen_settings = { 'indentation': '  ' }
 
 
 " Gundo
