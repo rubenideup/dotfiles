@@ -120,6 +120,7 @@ map <F1> :NERDTreeToggle<CR>
 " SuperTab
 " Bundle: https://github.com/ervandew/supertab.git
 let g:SuperTabDefaultCompletionType = "context" " SuperTab completion mode
+let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 
 
 " Vim surround
