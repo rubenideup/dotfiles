@@ -84,7 +84,7 @@ filetype indent on
 filetype plugin on
 
 " mark the lines above 120 columns
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+highlight OverLength ctermbg=red ctermfg=white gui=undercurl guisp=red
 match OverLength /\%121v.\+/
 
 " hack to solve bug in SQL files in ubuntu
