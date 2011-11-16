@@ -19,6 +19,11 @@ set nolazyredraw   " don't redraw screen while executing macros
 set encoding=utf-8
 set exrc           " enable per-directory .vimrc files
 set secure         " disable unsafe commands in local .vimrc files
+set incsearch      " find the next match as we type the search
+set hlsearch       " hilight searches by default
+set colorcolumn=+1 " mark the ideal max text width (vim 7.3 or greater)
+
+
 
 " persistent undo configuration (vim 7.3 or greater)
 set undodir=~/.vim/undodir
