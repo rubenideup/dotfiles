@@ -86,6 +86,9 @@ filetype plugin on
 " mark the lines above 120 columns
 highlight OverLength ctermbg=red ctermfg=white gui=undercurl guisp=red
 match OverLength /\%121v.\+/
+" mark the columns that are close to overlength limit
+highlight LineProximity gui=undercurl guisp=orange
+let w:m1=matchadd('LineProximity', '\%<121v.\%>115v', -1)
 
 " hack to solve bug in SQL files in ubuntu
 let g:omni_sql_no_default_maps = 1
