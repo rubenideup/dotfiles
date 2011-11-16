@@ -15,8 +15,10 @@ set noerrorbells
 set ignorecase
 set cursorline
 set textwidth=120
-set nolazyredraw " don't redraw screen while executing macros
+set nolazyredraw   " don't redraw screen while executing macros
 set encoding=utf-8
+set exrc           " enable per-directory .vimrc files
+set secure         " disable unsafe commands in local .vimrc files
 
 " basic ui options
 "set visualbell t_vb=
