@@ -76,7 +76,7 @@ set directory=~/.vim/swp//,/tmp//
 " ignore symfony project data (doc, coverage, etc.)
 set wildignore+=**/build/**,vendor/**,**/cache/**,**/tmp/** 
 set wildignore+=*.o,*.phar,*.php~
-set tags=tags;/
+set tags+=tags;/ " search recursively upwards for the tags file
 
 syntax on
 filetype on
@@ -90,8 +90,6 @@ match OverLength /\%121v.\+/
 highlight LineProximity gui=undercurl guisp=orange
 let w:m1=matchadd('LineProximity', '\%<121v.\%>115v', -1)
 
-" hack to solve bug in SQL files in ubuntu
-let g:omni_sql_no_default_maps = 1
 
 function! UpdateBundles()
   let cmd = "ruby ~/.dotfiles/vim/bin/vim-update-bundles.rb"
