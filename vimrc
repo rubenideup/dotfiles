@@ -21,15 +21,19 @@ set exrc           " enable per-directory .vimrc files
 set secure         " disable unsafe commands in local .vimrc files
 set incsearch      " find the next match as we type the search
 set hlsearch       " hilight searches by default
-set colorcolumn=+1 " mark the ideal max text width (vim 7.3 or greater)
+
+if version >= 730
+    set colorcolumn=+1 " mark the ideal max text width (vim 7.3 or greater)
+endif
 
 
-
-" persistent undo configuration (vim 7.3 or greater)
-set undodir=~/.vim/undodir
-set undofile
-set undolevels=1000  " maximum number of changes that can be undoed
-set undoreload=10000 " maximum number lines to save for undo on a buffer reload
+if version >= 730
+  " persistent undo configuration (vim 7.3 or greater)
+  set undodir=~/.vim/undodir
+  set undofile
+  set undolevels=1000  " maximum number of changes that can be undoed
+  set undoreload=10000 " maximum number lines to save for undo on a buffer reload
+endif
 
 " basic ui options
 "set visualbell t_vb=
@@ -86,6 +90,7 @@ filetype plugin on
 " mark the lines above 120 columns
 highlight OverLength ctermbg=red ctermfg=white gui=undercurl guisp=red
 match OverLength /\%121v.\+/
+
 " mark the columns that are close to overlength limit
 highlight LineProximity gui=undercurl guisp=orange
 let w:m1=matchadd('LineProximity', '\%<121v.\%>115v', -1)
