@@ -208,6 +208,10 @@ let g:user_zen_settings = { 'indentation': '  ' }
 nnoremap <F3> :GundoToggle<CR>
 
 
+" Camel case motion
+" Bundle: https://github.com/vim-scripts/camelcasemotion.git
+
+
 "**************************************************************
 "                Autocmds and keybindings                     *
 "**************************************************************
