@@ -194,7 +194,7 @@ let delimitMate_visual_leader = ","
 
 
 " Increment
-" Bundle: https://github.com/vim-scripts/increment.vim.git
+" Bundle: https://github.com/triglav/vim-visual-increment.git
 
 
 " Zen Coding
