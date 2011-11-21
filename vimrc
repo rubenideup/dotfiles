@@ -23,7 +23,7 @@ set incsearch      " find the next match as we type the search
 set hlsearch       " hilight searches by default
 
 if version >= 730
-    set colorcolumn=+1 " mark the ideal max text width (vim 7.3 or greater)
+  set colorcolumn=+1 " mark the ideal max text width (vim 7.3 or greater)
 endif
 
 
@@ -46,11 +46,11 @@ set mouse=a
 
 " set git branch on statusline
 function! GitBranch()
-    let branch = system("git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //'")
-    if branch != ''
-        return ' Git <' . substitute(branch, '\n', '', 'g') . '> '
-    en
-    return ''
+  let branch = system("git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //'")
+  if branch != ''
+      return ' Git <' . substitute(branch, '\n', '', 'g') . '> '
+  en
+  return ''
 endfunction
 
 set statusline=%<\ %n:%f\ %m%r%y%=%{GitBranch()}%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
