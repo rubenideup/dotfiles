@@ -16,6 +16,8 @@ set ignorecase
 set cursorline
 set textwidth=120
 set nolazyredraw   " don't redraw screen while executing macros
+set synmaxcol=150  " stop rendering syntax colors in long lines (improves rendering performance)
+set ttyscroll=3    " improves redraw performance when scroll
 set encoding=utf-8
 set exrc           " enable per-directory .vimrc files
 set secure         " disable unsafe commands in local .vimrc files
@@ -67,13 +69,8 @@ command! W :w " for mistyping :w as :W
 set foldmethod=syntax
 set foldlevel=1
 set foldcolumn=3
-let php_folding=1
 let javaScript_fold=1
 let xml_syntax_folding=1
-
-" php options
-let php_sql_query=1
-let php_htmlInStrings=1
 
 " directories for .swp files
 set directory=~/.vim/swp//,/tmp//
@@ -150,7 +147,11 @@ let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 
 
 " PHP Syntax (updated to 5.3)
-" Bundle: https://github.com/vim-scripts/php.vim--Nicholson.git
+" Bundle: https://github.com/vim-scripts/php.vim--Garvin.git
+let php_sql_query = 1
+let php_html_in_strings = 1
+let php_parent_error_close = 1
+let php_folding = 1
 
 
 " PHP Check syntax
