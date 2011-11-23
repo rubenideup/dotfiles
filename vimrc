@@ -67,7 +67,7 @@ command! W :w " for mistyping :w as :W
 
 " folding options
 set foldmethod=syntax
-set foldlevel=1
+set foldlevel=0
 set foldcolumn=3
 let javaScript_fold=1
 let xml_syntax_folding=1
