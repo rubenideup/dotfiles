@@ -4,7 +4,7 @@ alias la='ls -la'
 if which trash &> /dev/null; then
   alias rm='trash'
 else
-  " trash-cli is not available on debian, so skip anoying message
+  #trash-cli is not available on debian, so skip anoying message
   if grep -vi debian /etc/issue.net; then
     echo "Your rm's may harm you. Install trash package: apt-get install trash-cli"
   fi
