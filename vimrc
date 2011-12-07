@@ -74,9 +74,6 @@ let xml_syntax_folding=1
 
 " directories for .swp files
 set directory=~/.vim/swp//,/tmp//
-" ignore symfony project data (doc, coverage, etc.)
-set wildignore+=**/build/**,vendor/**,**/cache/**,**/tmp/** 
-set wildignore+=*.o,*.phar,*.php~
 set tags+=tags;/ " search recursively upwards for the tags file
 
 syntax on

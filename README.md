@@ -30,6 +30,15 @@ script [vim-update-bundles](http://github.com/bronson/vim-update-bundles "Vim-up
 repositories. A [mirror](http://vim-scripts.org "vim-scripts") is provided to all plugins in `www.vim.org`, 
 so you can use all plugins from `www.vim.org` without further problems. 
 
+Overwrite defaults per project
+------------------------------
+
+You can customize properties such as smarttabs, tabstop, etc. in each of your projects. Just drop your customized 
+`.vimrc` file in your project root directory and vim will load your new properties. As simple as it sounds!
+
+I provided a sample called `vimrc.sf2.sample` suited for Symfony2 projects.
+
+
 ### How do I install new bundles?
 
 First, you need to make sure that the bundle you want is in a git repository. 
