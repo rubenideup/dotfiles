@@ -22,6 +22,7 @@ configure_git() {
   git config --global alias.co checkout
   git config --global alias.br branch
   git config --global color.ui always
+  git config --global alias.df diff
 }
 
 echo "Saving old files ..."
