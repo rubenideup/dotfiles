@@ -46,16 +46,7 @@ set showcmd
 set showmode
 set mouse=a
 
-" set git branch on statusline
-function! GitBranch()
-  let branch = system("git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //'")
-  if branch != ''
-      return ' Git <' . substitute(branch, '\n', '', 'g') . '> '
-  en
-  return ''
-endfunction
-
-set statusline=%<\ %n:%f\ %m%r%y%=%{GitBranch()}%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
+set statusline=%<\ %n:%f\ %m%r%y%=%{fugitive#statusline()}\ %-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 
 
 set t_Co=256
@@ -208,6 +199,11 @@ nnoremap <F3> :GundoToggle<CR>
 
 " Camel case motion
 " Bundle: https://github.com/vim-scripts/camelcasemotion.git
+
+
+" Fugitive, Git integration for vim. This plugin is used to show current branch
+" in vim's statusline. If you remove it, remember to modify the statusline settings
+" Bundle: https://github.com/tpope/vim-fugitive
 
 
 "**************************************************************
