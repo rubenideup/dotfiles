@@ -24,12 +24,12 @@ set secure         " disable unsafe commands in local .vimrc files
 set incsearch      " find the next match as we type the search
 set hlsearch       " hilight searches by default
 
-if version >= 730
+if v:version >= 703
   set colorcolumn=+1 " mark the ideal max text width (vim 7.3 or greater)
 endif
 
 
-if version >= 730
+if v:version >= 703
   " persistent undo configuration (vim 7.3 or greater)
   set undodir=~/.vim/undodir
   set undofile
