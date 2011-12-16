@@ -33,3 +33,4 @@ alias pbpaste="xsel --clipboard --output"
 # tail php error logs
 alias phplog="tail -f /tmp/php_errors.log"
 alias sf=app/console
+alias ag=ack-grep
