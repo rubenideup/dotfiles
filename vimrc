@@ -2,7 +2,7 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-set nocompatible
+set nocompatible   " don't be compatible with legacy vi
 set ttyfast
 set number
 set smartindent
@@ -11,7 +11,7 @@ set autoindent
 set expandtab
 set tabstop=2
 set shiftwidth=2
-set noerrorbells
+set noerrorbells   " do not beep like a crazy bitch
 set ignorecase
 set cursorline
 set textwidth=120
@@ -42,7 +42,7 @@ endif
 set shm=atIWswxrnmlf " message formats
 set ruler
 set laststatus=2
-set showcmd
+set showcmd          " show us the command we're typing
 set showmode
 set mouse=a
 
@@ -50,7 +50,7 @@ set statusline=%<\ %n:%f\ %m%r%y%=%{fugitive#statusline()}\ %-35.(line:\ %l\ of\
 
 
 set t_Co=256
-set background=dark
+set background=dark    " your eyes will thank you
 colorscheme wombat256
 
 " vim behaviour
@@ -67,7 +67,7 @@ let xml_syntax_folding=1
 set directory=~/.vim/swp//,/tmp//
 set tags+=tags;/ " search recursively upwards for the tags file
 
-syntax on
+syntax on           " enable syntax highlight
 filetype on
 filetype indent on
 filetype plugin on
@@ -204,6 +204,10 @@ nnoremap <F3> :GundoToggle<CR>
 " Fugitive, Git integration for vim. This plugin is used to show current branch
 " in vim's statusline. If you remove it, remember to modify the statusline settings
 " Bundle: https://github.com/tpope/vim-fugitive
+
+
+" MatchTag, highlight a paired HTML tags
+" Bundle: https://github.com/vim-scripts/MatchTag.git
 
 
 "**************************************************************
