@@ -6,3 +6,5 @@ map <C-Left> <ESC>:bprev!<CR>
 map <C-Right> <ESC>:bnext!<CR>
 
 
+" open tag under cursor in new tab
+nmap <C-Enter> <C-w><C-]><C-w>T
