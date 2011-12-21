@@ -34,7 +34,7 @@ Overwrite defaults per project
 ------------------------------
 
 You can customize properties such as smarttabs, tabstop, etc. in each of your projects. Just drop your customized 
-`.vimrc` file in your project root directory and vim will load your new properties. As simple as it sounds!
+`.vimrc` file in your project root directory (or better make a symlink) and vim will load your new properties. As simple as it sounds!
 
 I provided a sample called `vimrc.sf2.sample` suited for Symfony2 projects.
 
