@@ -210,6 +210,10 @@ nnoremap <F3> :GundoToggle<CR>
 " Bundle: https://github.com/vim-scripts/MatchTag.git
 
 
+" Arg text object, motions for function/method arguments
+" Bundle: https://github.com/vim-scripts/argtextobj.vim.git
+
+
 "**************************************************************
 "                Autocmds and keybindings                     *
 "**************************************************************
