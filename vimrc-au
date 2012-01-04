@@ -21,12 +21,30 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
+" reformat opening braces in PHP
+" in control structures place opening brace in same line separated by one space
+" in methods/functions place opening brace in new line
+function! <SID>CodeStylingOpeningBracesPHP()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/){$/) {/
+    %s/function\(\s\+\S\+\)(\(.*\))\s*{/function\1(\2)\r\t{/
+    retab
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
 autocmd BufWritePre *.py                     :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.rb                     :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.sh                     :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.{js,json}              :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.css                    :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.{php,twig,ctp,yml}     :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.php                    :call <SID>CodeStylingOpeningBracesPHP()
 autocmd BufWritePre *.sql                    :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.{html,htm,xml,xsd,xsl} :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.{c,cpp,h,hpp}          :call <SID>StripTrailingWhitespaces()
