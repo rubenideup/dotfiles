@@ -31,7 +31,7 @@ function! <SID>CodeStylingOpeningBracesPHP()
     let c = col(".")
     " Do the business:
     %s/){$/) {/e
-    %s/function\(\s\+\S\+\)(\(.*\))\s*{/function\1(\2)\r\t{/e
+    %s/function\(\s\+\S\+\)(\(.*\))\s*{$/function\1(\2)\r\t{/e
     retab
     " Clean up: restore previous search history, and cursor position
     let @/=_s
