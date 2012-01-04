@@ -11,6 +11,7 @@ set autoindent
 set expandtab
 set tabstop=2
 set shiftwidth=2
+set smarttab
 set noerrorbells   " do not beep like a crazy bitch
 set ignorecase
 set cursorline
