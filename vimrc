@@ -44,12 +44,22 @@ endif
 "set visualbell t_vb=
 set shm=atIWswxrnmlf " message formats
 set ruler
-set laststatus=2
 set showcmd          " show us the command we're typing
 set showmode
 set mouse=a
 
-set statusline=%<\ %n:%f\ %m%r%y%=%{fugitive#statusline()}\ %-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
+" Nice statusbar
+set laststatus=2
+set statusline=
+set statusline+=%<    " truncate line if to long
+set statusline+=\ %n  " buffer number
+set statusline+=:%f   " relative file path
+set statusline+=\ %m  " modified flag
+set statusline+=%r    " readonly flag
+set statusline+=%y    " file type
+set statusline+=%w%q  " window flag
+set statusline+=%=%{fugitive#statusline()} " Git branch info
+set statusline+=\ %-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%) " cursor coordinates
 
 
 set t_Co=256
