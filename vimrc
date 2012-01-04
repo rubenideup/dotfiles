@@ -217,6 +217,10 @@ nnoremap <F3> :GundoToggle<CR>
 " Bundle: https://github.com/vim-scripts/argtextobj.vim.git
 
 
+" Inline snippets edit
+" Bundle: https://github.com/vim-scripts/inline_edit.vim.git
+
+
 "**************************************************************
 "                Autocmds and keybindings                     *
 "**************************************************************
