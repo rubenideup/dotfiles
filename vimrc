@@ -155,6 +155,11 @@ let php_parent_error_close = 1
 let php_folding = 1
 
 
+" PHP Documentor for Vim
+" Bundle: https://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
+nnoremap ,pd :call PhpDocSingle()<CR>
+
+
 " PHP Check syntax
 " Bundle: https://github.com/tomtom/checksyntax_vim.git
 
