@@ -6,6 +6,7 @@ set nocompatible   " don't be compatible with legacy vi
 set ttyfast
 set number
 set smartindent
+set backspace=indent,eol,start
 set cindent
 set autoindent
 set expandtab
