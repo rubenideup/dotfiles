@@ -58,7 +58,12 @@ set statusline+=:%f   " relative file path
 set statusline+=\ %m  " modified flag
 set statusline+=%r    " readonly flag
 set statusline+=%y    " file type
-set statusline+=%w%q  " window flag
+set statusline+=%w  " window flag
+
+if v:version >= 703
+  set statusline+=%q " window flag
+endif
+
 set statusline+=%=%{fugitive#statusline()} " Git branch info
 set statusline+=\ %-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%) " cursor coordinates
 
