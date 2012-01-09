@@ -170,14 +170,6 @@ nnoremap ,pd :call PhpDocSingle()<CR>
 " Bundle: https://github.com/tomtom/checksyntax_vim.git
 
 
-" Command-T
-" Bundle: https://github.com/vim-scripts/Command-T.git
-" BundleCommand: cd ruby/command-t; ruby extconf.rb; make
-nmap <silent> ,t :CommandT<CR>
-nmap <silent> ,b :CommandTBuffer<CR>
-let g:CommandTCancelMap=['<ESC>','<C-c>'] " remap the close action to solve konsole terminal problems
-
-
 " TagBar
 " Bundle: git://github.com/majutsushi/tagbar
 map <F2> :TagbarToggle<CR>
@@ -240,6 +232,14 @@ nnoremap <F3> :GundoToggle<CR>
 
 " Inline snippets edit
 " Bundle: https://github.com/vim-scripts/inline_edit.vim.git
+
+
+" Command-T
+" Bundle: https://github.com/vim-scripts/Command-T.git
+" BundleCommand: cd ruby/command-t; ruby extconf.rb; make
+nmap <silent> ,t :CommandT<CR>
+nmap <silent> ,b :CommandTBuffer<CR>
+let g:CommandTCancelMap=['<ESC>','<C-c>'] " remap the close action to solve konsole terminal problems
 
 
 "**************************************************************
