@@ -91,6 +91,9 @@ filetype on
 filetype indent on
 filetype plugin on
 
+" spelling options
+set spelllang=es_es,en_us
+
 " mark the lines above 120 columns
 highlight OverLength ctermbg=red ctermfg=white gui=undercurl guisp=red
 match OverLength /\%121v.\+/
