@@ -6,6 +6,7 @@ autocmd BufNewFile *.sh  s-^-#!/bin/bash\r\r-
 autocmd BufNewFile *.py  s-^-#!/usr/bin/python\r\r-
 autocmd BufNewFile *.rb  s-^-#!/usr/bin/ruby\r\r-
 autocmd BufNewFile *.c   s-^-#include <stdio.h>\r\rint main(int argc, char** argv) {\r\treturn 0;\r}-
+autocmd BufNewFile *.cpp s-^-#include <iostream>\r\rusing namespace std;\r\rint main(int argc, char* argv[]) {\r\treturn 0;\r}-
 autocmd BufNewFile *.php s-^-<?php\r\r-
 
 " remove trailing spaces
