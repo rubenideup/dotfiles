@@ -216,6 +216,7 @@ nnoremap <F3> :GundoToggle<CR>
 
 " Vim powerline statusbar
 " Bundle: http://github.com/Lokaltog/vim-powerline.git
+" BundleCommand: git checkout develop
 "let g:Powerline_symbols = 'fancy'
 
 
