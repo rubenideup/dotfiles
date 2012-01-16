@@ -49,25 +49,7 @@ set showcmd          " show us the command we're typing
 set showmode
 set mouse=a
 
-" Nice statusbar
 set laststatus=2
-set statusline=
-set statusline+=%<    " truncate line if to long
-set statusline+=\ %n  " buffer number
-set statusline+=:%f   " relative file path
-set statusline+=\ %m  " modified flag
-set statusline+=%r    " readonly flag
-set statusline+=%y    " file type
-set statusline+=%w  " window flag
-
-if v:version >= 703
-  set statusline+=%q " window flag
-endif
-
-set statusline+=%=%{fugitive#statusline()} " Git branch info
-set statusline+=\ %-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%) " cursor coordinates
-
-
 set t_Co=256
 set background=dark    " your eyes will thank you
 colorscheme wombat256
@@ -220,11 +202,6 @@ nnoremap <F3> :GundoToggle<CR>
 " Bundle: https://github.com/vim-scripts/camelcasemotion.git
 
 
-" Fugitive, Git integration for vim. This plugin is used to show current branch
-" in vim's statusline. If you remove it, remember to modify the statusline settings
-" Bundle: https://github.com/tpope/vim-fugitive
-
-
 " MatchTag, highlight a paired HTML tags
 " Bundle: https://github.com/vim-scripts/MatchTag.git
 
@@ -235,6 +212,11 @@ nnoremap <F3> :GundoToggle<CR>
 
 " Inline snippets edit
 " Bundle: https://github.com/vim-scripts/inline_edit.vim.git
+
+
+" Vim powerline statusbar
+" Bundle: http://github.com/Lokaltog/vim-powerline.git
+"let g:Powerline_symbols = 'fancy'
 
 
 " Command-T
