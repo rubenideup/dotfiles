@@ -52,8 +52,14 @@ autocmd BufWritePre *.sql                    :call <SID>StripTrailingWhitespaces
 autocmd BufWritePre *.{html,htm,xml,xsd,xsl} :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.{c,cpp,h,hpp}          :call <SID>StripTrailingWhitespaces()
 
-" syntax colors
+" Twig syntax colors
 autocmd BufRead *.twig set filetype=htmltwig
+
+" XML folding settings
+autocmd FileType xml setlocal foldmethod=indent foldlevel=1
+
+" decrease XML, HTML and Twig tabs to 2 spaces
+autocmd FileType xml,html,htmltwig set tabstop=2 shiftwidth=2
 
 " view special characters
 autocmd filetype xhtml,html,xml,php,yaml,htmltwig set list
