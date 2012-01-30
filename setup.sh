@@ -23,6 +23,7 @@ configure_git() {
   git config --global alias.br branch
   git config --global color.ui always
   git config --global alias.df diff
+  git config --global alias.pr "pull --rebase --stat"
 }
 
 echo "Saving old files ..."
