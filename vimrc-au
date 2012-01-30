@@ -61,6 +61,9 @@ autocmd FileType xml setlocal foldmethod=indent foldlevel=1
 " decrease XML, HTML and Twig tabs to 2 spaces
 autocmd FileType xml,html,htmltwig set tabstop=2 shiftwidth=2
 
+" set textwidth to 80 columns in txt files
+autocmd FileType txt set textwidth=80
+
 " view special characters
 autocmd filetype xhtml,html,xml,php,yaml,htmltwig set list
 autocmd filetype xhtml,html,xml set listchars=tab:▸\ 
