@@ -33,8 +33,9 @@ function! <SID>CodeStylingPHP()
     " Do the business:
     %s/){$/) {/e
     %s/function\(\s\+\S\+\)(\(.*\))\s*{$/function\1(\2)\r\t{/e
-    %s/\(if\|for\|foreach\|while\|do\|switch\|catch\)(/\1 (/e
-    %s/else{$/else {/e
+    %s/\(\s\+if\|\s\+for\|\s\+foreach\|\s\+while\|\s\+do\|\s\+switch\|\s\+catch\)(/\1 (/e
+    %s/\(\s\+else\|\s\+try\){$/\1 {/e
+    %s/}catch/} catch/e
     retab
     " Clean up: restore previous search history, and cursor position
     let @/=_s
