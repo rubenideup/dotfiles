@@ -13,19 +13,20 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set smarttab
-set noerrorbells   " do not beep like a crazy bitch
+set noerrorbells    " do not beep like a crazy bitch
 set ignorecase
 set cursorline
 set textwidth=120
-set nolazyredraw   " don't redraw screen while executing macros
-set synmaxcol=150  " stop rendering syntax colors in long lines (improves rendering performance)
-set ttyscroll=3    " improves redraw performance when scroll
+set nolazyredraw    " don't redraw screen while executing macros
+set synmaxcol=150   " stop rendering syntax colors in long lines (improves rendering performance)
+set ttyscroll=3     " improves redraw performance when scroll
 set encoding=utf-8
-set exrc           " enable per-directory .vimrc files
-set secure         " disable unsafe commands in local .vimrc files
-set incsearch      " find the next match as we type the search
-set hlsearch       " hilight searches by default
-set history=500    " store commands, search and marks between vim executions
+set fileformat=unix " endline setted to \n
+set exrc            " enable per-directory .vimrc files
+set secure          " disable unsafe commands in local .vimrc files
+set incsearch       " find the next match as we type the search
+set hlsearch        " hilight searches by default
+set history=500     " store commands, search and marks between vim executions
 set viminfo='1000,f1,:1000,/1000
 
 if v:version >= 703
@@ -216,7 +217,7 @@ nnoremap <F3> :GundoToggle<CR>
 
 " Vim powerline statusbar
 " Bundle: http://github.com/Lokaltog/vim-powerline.git
-" BundleCommand: git checkout develop
+" BundleCommand: git checkout develop; git pull origin develop
 "let g:Powerline_symbols = 'fancy'
 
 
