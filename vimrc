@@ -221,6 +221,14 @@ nnoremap <F3> :GundoToggle<CR>
 "let g:Powerline_symbols = 'fancy'
 
 
+" C++ omnicomplete feature
+" Bundle: http://github.com/vim-scripts/OmniCppComplete.git
+
+
+" Better syntax highligh for C++
+" Bundle: http://github.com/vim-scripts/cpp.vim--Skvirsky
+
+
 " Command-T
 " Bundle: https://github.com/vim-scripts/Command-T.git
 " BundleCommand: cd ruby/command-t; ruby extconf.rb; make

@@ -57,8 +57,9 @@ autocmd BufWritePre *.{c,cpp,h,hpp}          :call <SID>StripTrailingWhitespaces
 " Twig syntax colors
 autocmd BufRead *.twig set filetype=htmltwig
 
-" XML folding settings
+" folding settings
 autocmd FileType xml setlocal foldmethod=indent foldlevel=1
+autocmd FileType cpp,hpp set foldlevel=1 foldmethod=syntax
 
 " decrease XML, HTML and Twig tabs to 2 spaces
 autocmd FileType xml,html,htmltwig set tabstop=2 shiftwidth=2
@@ -67,9 +68,9 @@ autocmd FileType xml,html,htmltwig set tabstop=2 shiftwidth=2
 autocmd FileType txt set textwidth=80
 
 " view special characters
-autocmd filetype xhtml,html,xml,php,yaml,htmltwig set list
-autocmd filetype xhtml,html,xml set listchars=tab:▸\ 
-autocmd filetype php,yaml,htmltwig set listchars=tab:▸\ ,eol:¬
+autocmd FileType xhtml,html,xml,php,yaml,htmltwig,cpp,hpp set list
+autocmd FileType xhtml,html,xml set listchars=tab:▸\ 
+autocmd FileType php,yaml,htmltwig,cpp,hpp set listchars=tab:▸\ ,eol:¬
 
 " Remember last location in file
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
