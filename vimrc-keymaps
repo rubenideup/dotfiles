@@ -8,3 +8,17 @@ map <C-Right> <ESC>:bnext!<CR>
 
 " open tag under cursor in new tab
 nmap <C-Enter> <C-w><C-]><C-w>T
+
+"
+" Tabularize shortcuts
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+
+  nmap <Leader>a> :Tabularize /=><CR>
+  vmap <Leader>a> :Tabularize /=><CR>
+
+endif
