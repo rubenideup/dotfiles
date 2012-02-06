@@ -150,7 +150,7 @@ let php_folding = 1
 
 " PHP Documentor for Vim
 " Bundle: https://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
-nnoremap ,pd :call PhpDocSingle()<CR>
+nnoremap <Leader>pd :call PhpDocSingle()<CR>
 
 
 " PHP Check syntax
