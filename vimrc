@@ -57,6 +57,7 @@ colorscheme wombat256
 
 " vim behaviour
 command! W :w " for mistyping :w as :W
+let mapleader = ',' " remap leader key to ,
 
 " folding options
 set foldmethod=syntax
@@ -232,8 +233,8 @@ nnoremap <F3> :GundoToggle<CR>
 " Command-T
 " Bundle: https://github.com/vim-scripts/Command-T.git
 " BundleCommand: cd ruby/command-t; ruby extconf.rb; make
-nmap <silent> ,t :CommandT<CR>
-nmap <silent> ,b :CommandTBuffer<CR>
+nmap <silent> <Leader>t :CommandT<CR>
+nmap <silent> <Leader>T :CommandTBuffer<CR>
 let g:CommandTCancelMap=['<ESC>','<C-c>'] " remap the close action to solve konsole terminal problems
 
 
