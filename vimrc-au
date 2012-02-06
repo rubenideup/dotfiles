@@ -76,6 +76,10 @@ autocmd FileType php,yaml,htmltwig,cpp,hpp set listchars=tab:▸\ ,eol:¬
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
 
+" save and restore current file view (folds openend/closed, cursor, etc)
+autocmd BufWinLeave * silent! mkview
+autocmd BufWinEnter * silent! loadview
+
 " nicer comments
 autocmd BufNewFile,BufRead *.h,*.php set comments=s:/**,mb:*,ex:*/
 
