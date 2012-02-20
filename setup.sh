@@ -27,7 +27,7 @@ configure_git() {
 }
 
 echo "Saving old files ..."
-for file in ~/.vimrc ~/.vim ~/.vimrc-keymaps ~/.vimrc-au ~/.bashrc ~/.bash_aliases; do
+for file in ~/.vimrc ~/.vim ~/.vimrc-keymaps ~/.vimrc-au ~/.bashrc ~/.bash_aliases ~/.bash_colors; do
   if [ ! -L $file ]; then
     mv $file "$file.`date +%s`.old"
   else
@@ -36,7 +36,7 @@ for file in ~/.vimrc ~/.vim ~/.vimrc-keymaps ~/.vimrc-au ~/.bashrc ~/.bash_alias
 done
 
 echo "Linking dot files ..."
-for file in vim vimrc vimrc-keymaps vimrc-au bashrc bash_aliases; do
+for file in vim vimrc vimrc-keymaps vimrc-au bashrc bash_aliases bash_colors; do
   ln -s "`pwd`/$file" "$HOME/.$file"
 done
 

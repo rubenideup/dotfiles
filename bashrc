@@ -3,6 +3,7 @@
 # for examples
 
 export PATH=${PATH}:$HOME/local/bin:/opt/android-sdk-linux_x86/tools
+export MASTERBRANCH_HOME=/home/mmacia/workspace/masterbranch
 
 # set vi mode
 set -o vi
@@ -32,6 +33,9 @@ shopt -s checkwinsize
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
+
+# Human readable colors aliases for escape codes
+source ~/.bash_colors
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
