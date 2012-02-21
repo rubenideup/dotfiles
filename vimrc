@@ -218,7 +218,7 @@ nnoremap <F3> :GundoToggle<CR>
 
 " Vim powerline statusbar
 " Bundle: http://github.com/Lokaltog/vim-powerline.git
-" BundleCommand: git checkout develop; git pull origin develop
+" BundleCommand: git checkout develop; git pull origin develop; rm -f *.cache
 "let g:Powerline_symbols = 'fancy'
 
 
@@ -231,7 +231,15 @@ nnoremap <F3> :GundoToggle<CR>
 
 
 " Switch between .cpp and .hpp files
-" Bundle: http://github.com/vim-scripts/otherfile.vim.git
+" Bundle: https://github.com/vim-scripts/FSwitch.git
+nnoremap <F8> :FSHere<CR>
+au! BufEnter *.cpp,*.c let b:fswitchdst = 'hpp,h' | let b:fswitchlocs = './,../include'
+au! BufEnter *.hpp,*.h let b:fswitchdst = 'cpp,c' | let b:fswitchlocs = './,../src'
+let g:protodefprotogetter = $HOME . '/.vim/bundle/ProtoDef/pullproto.pl'
+
+
+" Generates skeleton methods using C++ headers
+" Bundle: https://github.com/vim-scripts/ProtoDef.git
 
 
 " Command-T
