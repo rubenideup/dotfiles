@@ -216,6 +216,11 @@ nnoremap <F3> :GundoToggle<CR>
 " Bundle: http://github.com/vim-scripts/inline_edit.vim.git
 
 
+" Fugitive, Git integration for vim. This plugin is used to show current branch
+" in vim's statusline.
+" Bundle: https://github.com/tpope/vim-fugitive
+
+
 " Vim powerline statusbar
 " Bundle: http://github.com/Lokaltog/vim-powerline.git
 " BundleCommand: git checkout develop; git pull origin develop; rm -f *.cache
