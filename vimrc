@@ -157,6 +157,10 @@ nnoremap <Leader>pd :call PhpDocSingle()<CR>
 " Bundle: http://github.com/tomtom/checksyntax_vim.git
 
 
+" Symfony 2 for vim
+" Bundle: http://github.com/docteurklein/vim-symfony.git
+
+
 " TagBar
 " Bundle: git://github.com/majutsushi/tagbar
 map <F2> :TagbarToggle<CR>
