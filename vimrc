@@ -154,7 +154,7 @@ let php_folding = 1
 
 
 " PHP Documentor for Vim
-" Bundle: http://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
+" Bundle: https://github.com/mikehaertl/pdv-standalone
 nnoremap <Leader>pd :call PhpDocSingle()<CR>
 
 
