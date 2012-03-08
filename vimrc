@@ -53,7 +53,12 @@ set mouse=a
 set laststatus=2
 set t_Co=256
 set background=dark    " your eyes will thank you
-colorscheme wombat256
+
+if has("gui_running")
+  colorscheme vombato
+else
+  colorscheme wombat256
+endif
 
 " vim behaviour
 command! W :w " for mistyping :w as :W
@@ -249,6 +254,10 @@ let g:protodefprotogetter = $HOME . '/.vim/bundle/ProtoDef/pullproto.pl'
 
 " Generates skeleton methods using C++ headers
 " Bundle: https://github.com/vim-scripts/ProtoDef.git
+
+
+" Vombato, an improved wombat color scheme
+" Bundle: https://github.com/molok/vim-vombato-colorscheme.git
 
 
 " Command-T
