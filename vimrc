@@ -260,6 +260,10 @@ let g:protodefprotogetter = $HOME . '/.vim/bundle/ProtoDef/pullproto.pl'
 " Bundle: https://github.com/molok/vim-vombato-colorscheme.git
 
 
+" Buffet, plugin to handle list of buffers
+" Bundle: https://github.com/vim-scripts/buffet.vim.git
+
+
 " Command-T
 " Bundle: https://github.com/vim-scripts/Command-T.git
 " BundleCommand: cd ruby/command-t; ruby extconf.rb; make
