@@ -158,8 +158,13 @@ let php_folding = 1
 nnoremap <Leader>pd :call PhpDocSingle()<CR>
 
 
-" PHP Check syntax
-" Bundle: http://github.com/tomtom/checksyntax_vim.git
+" Syntastic, syntax checker for various languages
+" Bundle: http://github.com/scrooloose/syntastic.git
+"
+" Clone this repository into PHP CodeSniffer standards directory and uncomment last line to 
+" enable syntax checking for Symfony2 projects
+" Symfony2 standars: git clone http://github.com/opensky/Symfony2-coding-standard.git Symfony2
+"let g:syntastic_phpcs_conf = "--standard=Symfony2"
 
 
 " Symfony 2 for vim
