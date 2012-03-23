@@ -284,7 +284,8 @@ let g:CommandTCancelMap=['<ESC>','<C-c>'] " remap the close action to solve kons
 "                Autocmds and keybindings                     *
 "**************************************************************
 
-source ~/.vimrc-keymaps
+" load keymaps after plugin load
+autocmd VimEnter * source ~/.vimrc-keymaps
 
 if has("autocmd")
   source ~/.vimrc-au

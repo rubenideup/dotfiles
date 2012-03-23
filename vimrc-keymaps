@@ -1,5 +1,4 @@
 map <F10> :bdelete<CR> " close current buffer
-map <F11> :shell<CR> " get a shell
 
 " cycle between buffers
 map <C-Left> <ESC>:bprev!<CR>
@@ -12,13 +11,19 @@ nmap <C-Enter> <C-w><C-]><C-w>T
 "
 " Tabularize shortcuts
 if exists(":Tabularize")
+  " variable assigments
   nmap <Leader>a= :Tabularize /=<CR>
   vmap <Leader>a= :Tabularize /=<CR>
 
+  " JSON objects
   nmap <Leader>a: :Tabularize /:\zs<CR>
   vmap <Leader>a: :Tabularize /:\zs<CR>
 
+  " PHP array arrows
   nmap <Leader>a> :Tabularize /=><CR>
   vmap <Leader>a> :Tabularize /=><CR>
 
+  " PHP variables
+  nmap <Leader>a$ :Tabularize /\$\w*<CR>
+  vmap <Leader>a$ :Tabularize /\$\w*<CR>
 endif
