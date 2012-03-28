@@ -135,10 +135,9 @@ nnoremap gR gD[{V%:s/<C-R>///gc<left><left><left>
 map <F1> :NERDTreeToggle<CR>
 
 
-" SuperTab
-" Bundle: http://github.com/ervandew/supertab.git
-let g:SuperTabDefaultCompletionType = "context" " SuperTab completion mode
-let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+" Neocomplcache, better completion and intellisense-like features
+" Bundle: http://github.com/Shougo/neocomplcache.git
+let g:neocomplcache_enable_at_startup = 1
 
 
 " Vim surround
