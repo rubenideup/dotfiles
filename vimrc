@@ -144,12 +144,14 @@ let g:neocomplcache_enable_at_startup = 1
 " Bundle: http://github.com/tpope/vim-surround.git
 
 
-" PHP Syntax (updated to 5.3)
-" Bundle: http://github.com/vim-scripts/php.vim--Garvin.git
+" PHP Syntax (updated to 5.4)
+" Bundle: http://github.com/shawncplus/php.vim.git
 let php_sql_query = 1
-let php_html_in_strings = 1
+let php_htmlInStrings = 1
 let php_parent_error_close = 1
 let php_folding = 1
+let php_baselib = 1
+let php_special_vars = 1
 
 
 " PHP Documentor for Vim
