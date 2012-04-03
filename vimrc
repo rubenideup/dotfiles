@@ -149,7 +149,7 @@ let g:neocomplcache_enable_at_startup = 1
 let php_sql_query = 1
 let php_htmlInStrings = 1
 let php_parent_error_close = 1
-let php_folding = 1
+let php_folding = 3
 let php_baselib = 1
 let php_special_vars = 1
 
@@ -169,10 +169,6 @@ nnoremap <Leader>pd :call PhpDocSingle()<CR>
 " And execute this command:
 "
 " phpcs --config-set default_standard Symfony2
-
-
-" Symfony 2 for vim
-" Bundle: http://github.com/docteurklein/vim-symfony.git
 
 
 " TagBar
