@@ -138,6 +138,9 @@ map <F1> :NERDTreeToggle<CR>
 " Neocomplcache, better completion and intellisense-like features
 " Bundle: http://github.com/Shougo/neocomplcache.git
 let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
 
 
 " Vim surround
