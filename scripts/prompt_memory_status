@@ -1,0 +1,29 @@
+#!/bin/sh
+
+mem_status()
+{
+  . $HOME/.bash_colors
+
+  mem_free=$(grep MemFree /proc/meminfo | awk '{print $2}')
+  mem_buffers=$(grep Buffers /proc/meminfo | awk '{print $2}')
+  mem_cached=$(grep "^Cached" /proc/meminfo | awk '{print $2}')
+  mem_total=$(grep MemTotal /proc/meminfo | awk '{print $2}')
+
+  mem_free_percentage=`echo "scale=0; (($mem_buffers+$mem_cached+$mem_free)*100)/$mem_total" | bc -l`
+
+  if [ $mem_free_percentage -gt 75 ]; then
+    MEM="[${YELLOW}|${BRIGHT_GREEN}|||${RESET}]"
+  elif [ $mem_free_percentage -gt 50 ]; then
+    MEM="[${YELLOW}|||${BRIGHT_GREEN}|${RESET}]"
+  elif [ $mem_free_percentage -gt 25 ]; then
+    MEM="[${YELLOW}||${BRIGHT_GREEN}||${RESET}]"
+  elif [ $mem_free_percentage -le 25 ]; then
+    echo -e "[${YELLOW}|||${BRIGHT_GREEN}|${RESET}]"
+  fi
+
+  export MEM0=$MEM
+}
+
+mem_status
+
+
