@@ -3,7 +3,7 @@
 # for examples
 
 export PATH=${PATH}:$HOME/local/bin:/opt/android-sdk-linux_x86/tools
-export MASTERBRANCH_HOME=/home/mmacia/workspace/masterbranch
+export MASTERBRANCH_HOME=$HOME/workspace/masterbranch
 
 # set vi mode
 set -o vi
@@ -60,11 +60,14 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
+  host_color=$BRIGHT_GREEN
+
   if [ "$(whoami)" = "root" ]; then
-      PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1)\[\033[00m\]\$ '
-  else
-      PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1)\[\033[00m\]\$ '
+      host_color=$BRIGHT_RED
   fi
+
+  PS1="\${debian_chroot:+($debian_chroot)}$host_color\u@\h${RESET}:${BRIGHT_BLUE}\w${BRIGHT_YELLOW}\$(__git_ps1)${RESET}\$ "
+  unset host_color
 else
   PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(__git_ps1)\$ '
 fi

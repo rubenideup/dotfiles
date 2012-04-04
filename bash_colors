@@ -1,72 +1,62 @@
-# Reset
-Color_Off='\e[0m'       # Text Reset
+DULL=0
+BRIGHT=1
 
-# Regular Colors
-Black='\e[0;30m'        # Black
-Red='\e[0;31m'          # Red
-Green='\e[0;32m'        # Green
-Yellow='\e[0;33m'       # Yellow
-Blue='\e[0;34m'         # Blue
-Purple='\e[0;35m'       # Purple
-Cyan='\e[0;36m'         # Cyan
-White='\e[0;37m'        # White
+FG_BLACK=30
+FG_RED=31
+FG_GREEN=32
+FG_YELLOW=33
+FG_BLUE=34
+FG_VIOLET=35
+FG_CYAN=36
+FG_WHITE=37
 
-# Bold
-BBlack='\e[1;30m'       # Black
-BRed='\e[1;31m'         # Red
-BGreen='\e[1;32m'       # Green
-BYellow='\e[1;33m'      # Yellow
-BBlue='\e[1;34m'        # Blue
-BPurple='\e[1;35m'      # Purple
-BCyan='\e[1;36m'        # Cyan
-BWhite='\e[1;37m'       # White
+FG_NULL=00
 
-# Underline
-UBlack='\e[4;30m'       # Black
-URed='\e[4;31m'         # Red
-UGreen='\e[4;32m'       # Green
-UYellow='\e[4;33m'      # Yellow
-UBlue='\e[4;34m'        # Blue
-UPurple='\e[4;35m'      # Purple
-UCyan='\e[4;36m'        # Cyan
-UWhite='\e[4;37m'       # White
+BG_BLACK=40
+BG_RED=41
+BG_GREEN=42
+BG_YELLOW=43
+BG_BLUE=44
+BG_VIOLET=45
+BG_CYAN=46
+BG_WHITE=47
 
-# Background
-On_Black='\e[40m'       # Black
-On_Red='\e[41m'         # Red
-On_Green='\e[42m'       # Green
-On_Yellow='\e[43m'      # Yellow
-On_Blue='\e[44m'        # Blue
-On_Purple='\e[45m'      # Purple
-On_Cyan='\e[46m'        # Cyan
-On_White='\e[47m'       # White
+BG_NULL=00
 
-# High Intensty
-IBlack='\e[0;90m'       # Black
-IRed='\e[0;91m'         # Red
-IGreen='\e[0;92m'       # Green
-IYellow='\e[0;93m'      # Yellow
-IBlue='\e[0;94m'        # Blue
-IPurple='\e[0;95m'      # Purple
-ICyan='\e[0;96m'        # Cyan
-IWhite='\e[0;97m'       # White
+##
+# ANSI Escape Commands
+##
+ESC="\033"
+NORMAL="\[$ESC[m\]"
+RESET="\[$ESC[${DULL};${FG_WHITE};${BG_NULL}m\]"
 
-# Bold High Intensty
-BIBlack='\e[1;90m'      # Black
-BIRed='\e[1;91m'        # Red
-BIGreen='\e[1;92m'      # Green
-BIYellow='\e[1;93m'     # Yellow
-BIBlue='\e[1;94m'       # Blue
-BIPurple='\e[1;95m'     # Purple
-BICyan='\e[1;96m'       # Cyan
-BIWhite='\e[1;97m'      # White
+##
+# Shortcuts for Colored Text ( Bright and FG Only )
+##
 
-# High Intensty backgrounds
-On_IBlack='\e[0;100m'   # Black
-On_IRed='\e[0;101m'     # Red
-On_IGreen='\e[0;102m'   # Green
-On_IYellow='\e[0;103m'  # Yellow
-On_IBlue='\e[0;104m'    # Blue
-On_IPurple='\e[10;95m'  # Purple
-On_ICyan='\e[0;106m'    # Cyan
-On_IWhite='\e[0;107m'   # White
+# DULL TEXT
+
+BLACK="\[$ESC[${DULL};${FG_BLACK}m\]"
+RED="\[$ESC[${DULL};${FG_RED}m\]"
+GREEN="\[$ESC[${DULL};${FG_GREEN}m\]"
+YELLOW="\[$ESC[${DULL};${FG_YELLOW}m\]"
+BLUE="\[$ESC[${DULL};${FG_BLUE}m\]"
+VIOLET="\[$ESC[${DULL};${FG_VIOLET}m\]"
+CYAN="\[$ESC[${DULL};${FG_CYAN}m\]"
+WHITE="\[$ESC[${DULL};${FG_WHITE}m\]"
+
+# BRIGHT TEXT
+BRIGHT_BLACK="\[$ESC[${BRIGHT};${FG_BLACK}m\]"
+BRIGHT_RED="\[$ESC[${BRIGHT};${FG_RED}m\]"
+BRIGHT_GREEN="\[$ESC[${BRIGHT};${FG_GREEN}m\]"
+BRIGHT_YELLOW="\[$ESC[${BRIGHT};${FG_YELLOW}m\]"
+BRIGHT_BLUE="\[$ESC[${BRIGHT};${FG_BLUE}m\]"
+BRIGHT_VIOLET="\[$ESC[${BRIGHT};${FG_VIOLET}m\]"
+BRIGHT_CYAN="\[$ESC[${BRIGHT};${FG_CYAN}m\]"
+BRIGHT_WHITE="\[$ESC[${BRIGHT};${FG_WHITE}m\]"
+
+# REV TEXT as an example
+REV_CYAN="\[$ESC[${DULL};${BG_WHITE};${BG_CYAN}m\]"
+REV_RED="\[$ESC[${DULL};${FG_YELLOW}; ${BG_RED}m\]"
+
+PROMPT_COMMAND='export ERR=$?'
