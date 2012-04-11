@@ -66,8 +66,8 @@ if [ "$color_prompt" = yes ]; then
       host_color=$BRIGHT_RED
   fi
 
-  PS1="\n${BRIGHT_VIOLET}┌(${RESET}\d \t${BRIGHT_VIOLET})${RESET} M$($HOME/.dotfiles/scripts/prompt_memory_status) "
-  PS1=$PS1"$($HOME/.dotfiles/scripts/prompt_battery_status)\n"
+  PS1="\n${BRIGHT_VIOLET}┌(${RESET}\d \t${BRIGHT_VIOLET})${RESET} M\$($HOME/.dotfiles/scripts/prompt_memory_status) "
+  PS1=$PS1"\$($HOME/.dotfiles/scripts/prompt_battery_status)\n"
   PS1=$PS1"${BRIGHT_VIOLET}└${RESET}"
   PS1=$PS1"\${debian_chroot:+($debian_chroot)}$host_color\u@\h${RESET}:${BRIGHT_BLUE}\w${BRIGHT_YELLOW}\$(__git_ps1)${RESET}\$ "
 
