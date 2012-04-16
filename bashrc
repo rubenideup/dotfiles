@@ -22,6 +22,9 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+# synchronize history in each time you type a command
+export PROMPT_COMMAND="history -a; history -n"
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -68,7 +71,7 @@ if [ "$color_prompt" = yes ]; then
 
   # prompt modules
   host="\n${BRIGHT_VIOLET}┌ ${RESET}\${debian_chroot:+($debian_chroot)}$host_color\u@\h"
-  date="${RESET} \d \t"
+  date="${RESET}\d \t"
   memory="M\$($HOME/.dotfiles/scripts/prompt_memory_status)"
   battery="\$($HOME/.dotfiles/scripts/prompt_battery_status)"
   git="${BRIGHT_YELLOW}\$(__git_ps1)${RESET}"
@@ -123,3 +126,4 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+

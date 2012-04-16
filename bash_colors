@@ -59,4 +59,3 @@ BRIGHT_WHITE="\[$ESC[${BRIGHT};${FG_WHITE}m\]"
 REV_CYAN="\[$ESC[${DULL};${BG_WHITE};${BG_CYAN}m\]"
 REV_RED="\[$ESC[${DULL};${FG_YELLOW}; ${BG_RED}m\]"
 
-PROMPT_COMMAND='export ERR=$?'
