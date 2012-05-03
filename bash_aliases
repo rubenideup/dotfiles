@@ -1,8 +1,10 @@
 alias ll='ls -l'
 alias la='ls -la'
 
-if which trash &> /dev/null; then
+if $(which trash &> /dev/null); then
   alias rm='trash'
+elif $(which trash-put &> /dev/null); then 
+  alias rm='trash-put'
 else
   #trash-cli is not available on debian, so skip anoying message
   if grep -vi debian /etc/issue.net; then
