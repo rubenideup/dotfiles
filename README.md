@@ -13,11 +13,6 @@ as `~/.$file-name.%date%.old` . To install, simple input this commands:
 And you're done! You may wanna edit your `~/.vimrc` or `~/.vimrc-keymaps` , but i've already provided it
 with sensible defaults ;)
 
-Note that if you want to use Command-T plugin, first you have to install the packages `ruby-dev` and `gcc`. 
-This plugin needs to compile a small part of native code, although this compilation is managed internaly by the 
-update process, it can cause errors if the compiler or development files are not installed. Please read the Command-T 
-[documentation](https://wincent.com/products/command-t) for a full description of installation requirements. 
-
 Managing plugins/bundles
 ------------------------
    

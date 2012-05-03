@@ -138,11 +138,27 @@ map <F1> :NERDTreeToggle<CR>
 " Neocomplcache, better completion and intellisense-like features
 " Bundle: http://github.com/Shougo/neocomplcache.git
 let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_auto_completion_start_length = 4
-
+"let g:neocomplcache_enable_smart_case = 1
+"let g:neocomplcache_enable_camel_case_completion = 1
+"let g:neocomplcache_enable_underbar_completion = 1
+"let g:neocomplcache_auto_completion_start_length = 4
+"
+"" Enable heavy omni completion.
+"if !exists('g:neocomplcache_omni_patterns')
+"  let g:neocomplcache_omni_patterns = {}
+"endif
+"let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+"let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+"let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
+"let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+"
+"let g:neocomplcache_disable_auto_complete = 1
+"
+"inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
+"function! s:check_back_space()"{{{
+"  let col = col('.') - 1
+"  return !col || getline('.')[col - 1] =~ '\s'
+"endfunction"}}
 
 " Vim surround
 " Bundle: http://github.com/tpope/vim-surround.git
@@ -273,12 +289,10 @@ let g:protodefprotogetter = $HOME . '/.vim/bundle/ProtoDef/pullproto.pl'
 " Bundle: https://github.com/vim-scripts/buffet.vim.git
 
 
-" Command-T
-" Bundle: https://github.com/vim-scripts/Command-T.git
-" BundleCommand: cd ruby/command-t; ruby extconf.rb; make
+" Ctrl+P
+" Bundle: https://github.com/kien/ctrlp.vim.git
 nmap <silent> <Leader>t :CommandT<CR>
-nmap <silent> <Leader>T :CommandTBuffer<CR>
-let g:CommandTCancelMap=['<ESC>','<C-c>'] " remap the close action to solve konsole terminal problems
+let g:ctrlp_map = '<Leader>t'
 
 
 "**************************************************************
