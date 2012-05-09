@@ -22,8 +22,6 @@ set synmaxcol=150   " stop rendering syntax colors in long lines (improves rende
 set ttyscroll=3     " improves redraw performance when scroll
 set encoding=utf-8
 set fileformat=unix " endline setted to \n
-set exrc            " enable per-directory .vimrc files
-set secure          " disable unsafe commands in local .vimrc files
 set incsearch       " find the next match as we type the search
 set hlsearch        " hilight searches by default
 set history=500     " store commands, search and marks between vim executions
@@ -197,6 +195,10 @@ map <F2> :TagbarToggle<CR>
 let g:tagbar_iconchars = ['▾', '▸']
 let g:tagbar_foldlevel = 1
 let g:tagbar_autofocus = 1
+
+
+" Local vimrc, enables per-project configurations
+" Bundle: http://github.com/thinca/vim-localrc.git
 
 
 " Tabular
