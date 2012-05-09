@@ -194,6 +194,9 @@ nnoremap <Leader>pd :call PhpDocSingle()<CR>
 " TagBar
 " Bundle: git://github.com/majutsushi/tagbar
 map <F2> :TagbarToggle<CR>
+let g:tagbar_iconchars = ['▾', '▸']
+let g:tagbar_foldlevel = 1
+let g:tagbar_autofocus = 1
 
 
 " Tabular
