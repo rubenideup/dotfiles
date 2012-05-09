@@ -70,14 +70,14 @@ if [ "$color_prompt" = yes ]; then
   fi
 
   # prompt modules
-  host="\n${BRIGHT_VIOLET}┌ ${RESET}\${debian_chroot:+($debian_chroot)}$host_color\u@\h"
-  date="${RESET}\d \t"
+  host="\n${BRIGHT_VIOLET}┌ ${RST}\${debian_chroot:+($debian_chroot)}$host_color\u@\h"
+  date="${RST}\d \t"
   memory="M\$($HOME/.dotfiles/scripts/prompt_memory_status)"
   battery="\$($HOME/.dotfiles/scripts/prompt_battery_status)"
-  git="${BRIGHT_YELLOW}\$(__git_ps1)${RESET}"
-  path="${BRIGHT_BLUE}\w${RESET}"
+  git="${BRIGHT_YELLOW}\$(__git_ps1)${RST}"
+  path="${BRIGHT_BLUE}\w${RST}"
 
-  PS1="${host} ${date} ${memory} ${battery}\n${BRIGHT_VIOLET}└${RESET} ${path}${git}\$ "
+  PS1="${host} ${date} ${memory} ${battery}\n${BRIGHT_VIOLET}└${RST} ${path}${git}\$ "
 
   unset host_color
 else
