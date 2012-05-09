@@ -44,7 +44,7 @@ echo "Installing bundles..."
 if [ $(which ruby 2>/dev/null) ]; then
   ruby `pwd`/vim/bin/vim-update-bundles.rb
 else
-  echo "ERROR: ruby is not installed. You have to install ruby and ruby-dev packages!"
+  echo "ERROR: ruby is not installed. You have to install ruby package!"
 fi
 
 install_helper_scripts
