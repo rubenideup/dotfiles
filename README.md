@@ -34,6 +34,8 @@ As simple as it sounds!
 
 I provided a sample called `local.php.vimrc` suited for Symfony2 projects.
 
+For more info visit [vim-localrc](https://github.com/thinca/vim-localrc) page
+
 
 ### How do I install new bundles?
 
