@@ -50,4 +50,4 @@ then
    COLOUR="$GRN"
 fi
 
-/bin/echo -n "B[${COLOUR}${CHARGE}%${NON} ${BATSTT}]"
+/bin/echo -e "B[${COLOUR}${CHARGE}%${NON} ${BATSTT}]"
