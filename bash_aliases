@@ -12,6 +12,11 @@ else
   fi
 fi
 
+# use mosh as default SSH client if present
+if $(which mosh &>/dev/null); then
+  alias ssh='mosh'
+fi
+
 alias cd..='cd ..'
 alias gti="git"
 alias wspotify='wine ~/.wine/drive_c/Archivos\ de\ programa/Spotify/spotify.exe'
