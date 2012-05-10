@@ -6,6 +6,5 @@ set tabstop=4
 set shiftwidth=4
 
 " ignore this directories/files
-set wildignore+=app/build/**,app/cache/**,app/logs/**,web/build/**
-set wildignore+=*.phar,*.php~
+set wildignore+=*.jpg,*.png,*.gif,*.phar,*.php~
 

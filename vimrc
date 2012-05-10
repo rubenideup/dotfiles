@@ -72,6 +72,7 @@ let xml_syntax_folding=1
 " directories for .swp files
 set directory=~/.vim/swp//,/tmp//
 set tags+=tags;/ " search recursively upwards for the tags file
+set wildignore=**/cache/**,**/build/**,**/logs/**
 
 syntax on           " enable syntax highlight
 filetype on

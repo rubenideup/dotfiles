@@ -7,7 +7,7 @@ set tabstop=2
 set shiftwidth=2
 
 " ignore this directories/files
-set wildignore+=build/**,doc/**
+set wildignore+=**/doc/**
 
 " Generate new tags with command
 "
