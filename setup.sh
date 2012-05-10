@@ -28,10 +28,10 @@ configure_git() {
 
 echo "Saving old files ..."
 for file in ~/.vimrc ~/.vim ~/.vimrc-keymaps ~/.vimrc-au ~/.bashrc ~/.bash_aliases ~/.bash_colors; do
-  if [ ! -L $file ]; then
-    mv $file "$file.`date +%s`.old"
-  else
+  if [ -L $file ]; then
     rm -f $file
+  elif [ -e $file ]; then
+    mv $file "$file.`date +%s`.old"
   fi
 done
 
