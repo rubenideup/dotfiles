@@ -173,6 +173,10 @@ let php_baselib = 1
 let php_special_vars = 1
 
 
+" PHP Debugger
+" Bundle: https://github.com/vim-scripts/DBGPavim.git
+
+
 " PHP Documentor for Vim
 " Bundle: https://github.com/mikehaertl/pdv-standalone
 nnoremap <Leader>pd :call PhpDocSingle()<CR>
