@@ -70,7 +70,7 @@ if [ "$color_prompt" = yes ]; then
   fi
 
   # prompt modules
-  host="\n${BRIGHT_VIOLET}┌ ${RST}\${debian_chroot:+($debian_chroot)}$host_color\u@\h"
+  host="${BRIGHT_VIOLET}┌ ${RST}\${debian_chroot:+($debian_chroot)}$host_color\u@\h"
   date="${RST}\d \t"
   memory="M\$($HOME/.dotfiles/scripts/prompt_memory_status)"
   battery="\$($HOME/.dotfiles/scripts/prompt_battery_status)"
