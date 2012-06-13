@@ -76,9 +76,21 @@ if [ "$color_prompt" = yes ]; then
   battery="\$($HOME/.dotfiles/scripts/prompt_battery_status)"
   git="${BRIGHT_YELLOW}\$(__git_ps1)${RST}"
   path="${BRIGHT_BLUE}\w${RST}"
+  caret="\$"
 
-  PS1="${host} ${date} ${memory} ${battery}\n${BRIGHT_VIOLET}└${RST} ${path}${git}\$ "
+  if [ "$(whoami)" = "root" ]; then
+    caret="#"
+  fi
 
+  PS1="${host} ${date} ${memory} ${battery}\n${BRIGHT_VIOLET}└${RST} ${path}${git}${caret} "
+
+  unset host
+  unset date
+  unset memory
+  unset battery
+  unset git
+  unset path
+  unset caret
   unset host_color
 else
   PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(__git_ps1)\$ '
