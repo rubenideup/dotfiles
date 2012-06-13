@@ -268,7 +268,9 @@ nnoremap <F3> :GundoToggle<CR>
 " Vim powerline statusbar
 " Bundle: http://github.com/Lokaltog/vim-powerline.git
 " BundleCommand: git checkout develop; git pull origin develop; rm -f *.cache
-"let g:Powerline_symbols = 'fancy'
+if has("gui_running")
+  let g:Powerline_symbols = 'fancy'
+endif
 
 
 " C++ omnicomplete feature
