@@ -13,6 +13,7 @@ else
 fi
 
 alias cd..='cd ..'
+alias ..='cd ..'
 alias gti="git"
 alias wspotify='wine ~/.wine/drive_c/Archivos\ de\ programa/Spotify/spotify.exe'
 
