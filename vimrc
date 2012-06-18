@@ -297,6 +297,10 @@ let g:protodefprotogetter = $HOME . '/.vim/bundle/ProtoDef/pullproto.pl'
 " Bundle: https://github.com/molok/vim-vombato-colorscheme.git
 
 
+" Pyte, a light color schema
+" Bundle: https://github.com/vim-scripts/pyte.git
+
+
 " Buffet, plugin to handle list of buffers
 " Bundle: https://github.com/vim-scripts/buffet.vim.git
 
