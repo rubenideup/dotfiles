@@ -26,6 +26,7 @@ set incsearch       " find the next match as we type the search
 set hlsearch        " hilight searches by default
 set history=500     " store commands, search and marks between vim executions
 set viminfo='1000,f1,:1000,/1000
+set cf              " Enable error files & error jumping
 
 if v:version >= 703
   set colorcolumn=+1 " mark the ideal max text width (vim 7.3 or greater)
@@ -311,6 +312,10 @@ nmap <silent> <Leader>t :CommandT<CR>
 let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_use_caching = 1
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+
+
+" Rails plugin
+" Bundle: https://github.com/tpope/vim-rails.git
 
 
 "**************************************************************
