@@ -318,6 +318,10 @@ let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 " Bundle: https://github.com/tpope/vim-rails.git
 
 
+" Vim ruby
+" Bundle: https://github.com/vim-ruby/vim-ruby.git
+
+
 "**************************************************************
 "                Autocmds and keybindings                     *
 "**************************************************************

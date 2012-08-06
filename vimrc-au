@@ -4,7 +4,7 @@ autocmd BufNewFile *.pm  s-^-package XXX;\r\ruse strict;\ruse warnings;\r\r1;-
 autocmd BufNewFile *.pl  s-^-#!/usr/bin/perl\r\ruse strict;\ruse warnings;\r\r-
 autocmd BufNewFile *.sh  s-^-#!/bin/bash\r\r-
 autocmd BufNewFile *.py  s-^-#!/usr/bin/python\r\r-
-autocmd BufNewFile *.rb  s-^-#!/usr/bin/ruby\r\r-
+autocmd BufNewFile *.rb  s-^-#charset: utf-8\r\r-
 autocmd BufNewFile *.c   s-^-#include <stdio.h>\r\rint main(int argc, char** argv) {\r\treturn 0;\r}-
 autocmd BufNewFile *.cpp s-^-#include <iostream>\r\rusing namespace std;\r\rint main(int argc, char* argv[]) {\r\treturn 0;\r}-
 autocmd BufNewFile *.php s-^-<?php\r\r-
@@ -126,6 +126,13 @@ autocmd FileType css        set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml        set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php        set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c          set omnifunc=ccomplete#Complete
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+
+" Ruby & rails omnicompletion tweaks
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
+autocmd FileType ruby,eruby let g:rubycomplete_rails=1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
+autocmd FileType ruby,eruby :inoremap <tab> <c-x><c-o>
 
 
 " Omnicompletion menu navigation keys
