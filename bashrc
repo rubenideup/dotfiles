@@ -2,8 +2,11 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-export PATH=${PATH}:$HOME/local/bin:/opt/android-sdk-linux_x86/tools
+export PATH=${PATH}:$HOME/local/bin:$HOME/.rvm/bin:/opt/android-sdk-linux_x86/tools
 export MASTERBRANCH_HOME=$HOME/workspace/masterbranch
+
+# loads RVM into shell session
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # set vi mode
 set -o vi
@@ -62,6 +65,21 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+function ruby_version {
+  if [[ -f ~/.rvm/bin/rvm-prompt ]]; then
+    local system=$(~/.rvm/bin/rvm-prompt s)
+    local interp=$(~/.rvm/bin/rvm-prompt i)
+
+    if [[ -n $system ]]; then
+      # Don't show interpreter if it's just MRI
+      case $interp in
+        ruby) echo "$(~/.rvm/bin/rvm-prompt v g)" ;;
+        *) echo "$(~/.rvm/bin/rvm-prompt i v g)" ;;
+      esac
+    fi
+  fi
+}
+
 if [ "$color_prompt" = yes ]; then
   host_color=$BRIGHT_GREEN
 
@@ -71,7 +89,8 @@ if [ "$color_prompt" = yes ]; then
 
   # prompt modules
   host="${BRIGHT_VIOLET}┌ ${RST}\${debian_chroot:+($debian_chroot)}$host_color\u@\h"
-  date="${RST}\d \t"
+  date="${RST}\d "
+  ruby="${BRIGHT_VIOLET}♦ \$(ruby_version)${RST}"
   memory="M\$($HOME/.dotfiles/scripts/prompt_memory_status)"
   battery="\$($HOME/.dotfiles/scripts/prompt_battery_status)"
   git="${BRIGHT_YELLOW}\$(__git_ps1)${RST}"
@@ -82,7 +101,7 @@ if [ "$color_prompt" = yes ]; then
     caret="#"
   fi
 
-  PS1="${host} ${date} ${memory} ${battery}\n${BRIGHT_VIOLET}└${RST} ${path}${git}${caret} "
+  PS1="${host} ${ruby} ${date} ${memory} ${battery}\n${BRIGHT_VIOLET}└${RST} ${path}${git}${caret} "
 
   unset host
   unset date
