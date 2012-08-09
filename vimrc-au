@@ -60,7 +60,7 @@ autocmd BufRead *.twig set filetype=htmltwig
 " folding settings
 autocmd FileType xml setlocal foldmethod=indent foldlevel=1
 autocmd FileType cpp,hpp set foldlevel=1 foldmethod=syntax foldnestmax=3 foldcolumn=4
-autocmd FileType rb set foldmethod=indent foldlevel=1 foldnestmax=2
+autocmd FileType ruby,eruby set foldmethod=indent foldlevel=1 foldnestmax=2 foldcolumn=4 
 
 " decrease XML, HTML and Twig tabs to 2 spaces
 autocmd FileType xml,html,htmltwig set tabstop=2 shiftwidth=2
@@ -132,7 +132,6 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
 autocmd FileType ruby,eruby let g:rubycomplete_rails=1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
-autocmd FileType ruby,eruby :inoremap <tab> <c-x><c-o>
 
 
 " Omnicompletion menu navigation keys
