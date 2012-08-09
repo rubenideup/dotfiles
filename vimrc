@@ -165,7 +165,7 @@ let g:neocomplcache_enable_at_startup = 1
 
 
 " PHP Syntax (updated to 5.4)
-" Bundle: http://github.com/shawncplus/php.vim.git
+" Bundle: https://github.com/vim-scripts/phpvim.git
 let php_sql_query = 1
 let php_htmlInStrings = 1
 let php_parent_error_close = 1
@@ -280,6 +280,10 @@ endif
 
 " Better syntax highligh for C++
 " Bundle: http://github.com/vim-scripts/cpp.vim--Skvirsky
+
+
+" Better syntax dor C++ STL
+" Bundle: https://github.com/vim-scripts/stl.git
 
 
 " Switch between .cpp and .hpp files
