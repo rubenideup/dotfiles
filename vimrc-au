@@ -133,6 +133,10 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
 autocmd FileType ruby,eruby let g:rubycomplete_rails=1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
 
+" Rainbow parentheses
+autocmd syntax * call rainbow#load([['(',')'],['\[','\]'],['{','}']])
+autocmd syntax python call rainbow#load([['(',')'],['\[','\]'],['{','}'],['begin','end']])
+autocmd syntax ruby call rainbow#load([['(',')'],['\[','\]'],['{','}'],['if','end']])
 
 " Omnicompletion menu navigation keys
 function! OmniPopup(action)
