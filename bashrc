@@ -2,7 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-export PATH=${PATH}:$HOME/local/bin:$HOME/.rvm/bin:/opt/android-sdk-linux_x86/tools
+export PATH=${PATH}:$HOME/local/bin:$HOME/.rvm/bin:/opt/android/tools:/opt/android/platform-tools
 export MASTERBRANCH_HOME=$HOME/workspace/masterbranch
 
 # loads RVM into shell session

@@ -318,16 +318,16 @@ let g:ctrlp_use_caching = 1
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 
 
-" Rainbow parentheses
-" Bundle: https://github.com/vim-scripts/Rainbow-Parentheses-Improved.git
-
-
 " Rails plugin
 " Bundle: https://github.com/tpope/vim-rails.git
 
 
 " Vim ruby
 " Bundle: https://github.com/vim-ruby/vim-ruby.git
+
+
+" Vim javascript
+" Bundle: https://github.com/pangloss/vim-javascript.git
 
 
 "**************************************************************

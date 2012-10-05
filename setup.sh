@@ -24,7 +24,7 @@ configure_git() {
   git config --global color.ui always
   git config --global alias.df diff
   git config --global alias.pr "pull --rebase --stat"
-  git confif --global alias.in "merge --squash --commit"
+  git config --global alias.in "merge --squash --commit"
   git config --global core.editor vim
 }
 

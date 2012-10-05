@@ -44,7 +44,7 @@ function! <SID>CodeStylingPHP()
 endfunction
 
 autocmd BufWritePre *.py                     :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre *.rb                     :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.{rb,erb}               :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.sh                     :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.{js,json}              :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.css                    :call <SID>StripTrailingWhitespaces()
@@ -60,18 +60,18 @@ autocmd BufRead *.twig set filetype=htmltwig
 " folding settings
 autocmd FileType xml setlocal foldmethod=indent foldlevel=1
 autocmd FileType cpp,hpp set foldlevel=1 foldmethod=syntax foldnestmax=3 foldcolumn=4
-autocmd FileType ruby,eruby set foldmethod=indent foldlevel=1 foldnestmax=2 foldcolumn=4 
+autocmd FileType ruby,eruby,javascript set foldmethod=indent foldlevel=1 foldnestmax=2 foldcolumn=4 
 
 " decrease XML, HTML and Twig tabs to 2 spaces
-autocmd FileType xml,html,htmltwig set tabstop=2 shiftwidth=2
+autocmd FileType xml,html,htmltwig,eruby set tabstop=2 shiftwidth=2
 
 " set textwidth to 80 columns in txt files
 autocmd FileType txt set textwidth=80
 
 " view special characters
-autocmd FileType xhtml,html,xml,php,yaml,htmltwig,cpp,hpp,ruby set list
+autocmd FileType xhtml,html,xml,php,yaml,htmltwig,cpp,hpp,ruby,eruby,javascript set list
 autocmd FileType xhtml,html,xml set listchars=tab:▸\ 
-autocmd FileType php,yaml,htmltwig,cpp,hpp,ruby set listchars=tab:▸\ ,eol:¬
+autocmd FileType php,yaml,htmltwig,cpp,hpp,ruby,eruby,javascript set listchars=tab:▸\ ,eol:¬
 
 " Remember last location in file
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
@@ -132,23 +132,3 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
 autocmd FileType ruby,eruby let g:rubycomplete_rails=1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
-
-" Rainbow parentheses
-autocmd syntax * call rainbow#load([['(',')'],['\[','\]'],['{','}']])
-autocmd syntax python call rainbow#load([['(',')'],['\[','\]'],['{','}'],['begin','end']])
-autocmd syntax ruby call rainbow#load([['(',')'],['\[','\]'],['{','}'],['if','end']])
-
-" Omnicompletion menu navigation keys
-function! OmniPopup(action)
-    if pumvisible()
-        if a:action == 'j'
-            return "\<C-N>"
-        elseif a:action == 'k'
-            return "\<C-P>"
-        endif
-    endif
-    return a:action
-endfunction
-
-inoremap <silent>j <C-R>=OmniPopup('j')<CR>
-inoremap <silent>k <C-R>=OmniPopup('k')<CR>
